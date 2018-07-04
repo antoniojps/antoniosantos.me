@@ -1,10 +1,10 @@
 <template>
     <div>
-        <textarea 
+        <textarea
             :rows="textAreaRows"
             :disabled="commandEntered"
             spellcheck="false"
-            v-model='textAreaTxt' 
+            v-model='textAreaTxt'
             @keyup='disableUserDelete'
             @keydown.enter.prevent='readCommand'
             @keydown.up.prevent='typePrevCommand'
@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import H from "../../costum/Helpers";
-import constants from "../../costum/constants";
+import H from '@/costum/Helpers';
+import constants from '@/costum/constants';
 
 export default {
-  name: "TerminalTextArea",
+  name: 'TerminalTextArea',
   props: {
     directory: {
       type: String,
@@ -50,7 +50,7 @@ export default {
       textAreaRows: 1,
       cmd: undefined,
       focus: true,
-      height: "auto",
+      height: 'auto',
       logIndex: this.commandLogs.length - 1,
       logIndexDecreased: false,
       logIndexIncreased: false
@@ -69,34 +69,32 @@ export default {
       return H.convertToRegex(this.directory);
     },
     styleObj() {
-      if (this.height !== "auto") {
-        return { height: this.height + "px" };
+      if (this.height !== 'auto') {
+        return { height: `${this.height}px` };
       }
       return { height: this.height };
     },
     helpText() {
-      let helpTxt = "Available commands:";
+      let helpTxt = 'Available commands:';
       if (this.commands) {
-        H.getPublicCommandsObj(this.commands).forEach(cmd => {
+        H.getPublicCommandsObj(this.commands).forEach((cmd) => {
           // if has description add description to help output
           if (cmd.description) {
-            helpTxt = helpTxt + `\n${cmd.command} - ${cmd.description}`;
+            helpTxt += `\n${cmd.command} - ${cmd.description}`;
             // else only show command
           } else {
-            helpTxt = helpTxt + `\n${cmd.command}`;
+            helpTxt += `\n${cmd.command}`;
           }
         });
       } else {
-        helpTxt = "\nNo commands available";
+        helpTxt = '\nNo commands available';
       }
       return helpTxt;
     },
     cdText() {
-      let cdText = "Available directories:";
-      let directories = this.$router.options.routes.map(route => {
-        return "\n" + route.path;
-      });
-      directories = directories.join("");
+      const cdText = 'Available directories:';
+      let directories = this.$router.options.routes.map(route => `\n${route.path}`);
+      directories = directories.join('');
 
       return cdText + directories;
     }
@@ -105,12 +103,13 @@ export default {
     readCommand() {
       this.cmd = this.textAreaTxt.match(new RegExp(this.directoryRegex));
 
-      //command is found
+      // command is found
       if (!this.cmd[2]) {
         this.cmd = false;
       } else {
-        this.cmd = this.cmd[2];
-        this.$emit("command-log", this.cmd);
+        const [, , cmd] = this.cmd;
+        this.cmd = cmd;
+        this.$emit('command-log', this.cmd);
         this.resetLogIndex();
         this.manageCommandRes();
       }
@@ -119,10 +118,11 @@ export default {
     typePrevCommand() {
       this.logIndexDecreased = false;
       if (this.logIndexIncreased) {
-        this.logIndex--;
+        this.logIndex -= 1;
       }
       if (this.logIndex > 0 && this.logIndex <= this.commandLogs.length - 1) {
-        this.replaceCommand(this.commandLogs[this.logIndex--]);
+        this.replaceCommand(this.commandLogs[this.logIndex]);
+        this.logIndex -= 1;
         this.logIndexDecreased = true;
       } else if (this.logIndex === 0) {
         this.replaceCommand(this.commandLogs[this.logIndex]);
@@ -132,14 +132,14 @@ export default {
     typeNextCommand() {
       this.logIndexIncreased = false;
       if (this.logIndexDecreased) {
-        this.logIndex++;
+        this.logIndex += 1;
         this.logIndexDecreased = false;
       }
       if (this.logIndex < this.commandLogs.length - 1) {
         this.logIndexIncreased = true;
-        this.replaceCommand(this.commandLogs[++this.logIndex]);
+        this.replaceCommand(this.commandLogs[this.logIndex += 1]);
       } else {
-        this.replaceCommand("");
+        this.replaceCommand('');
       }
     },
 
@@ -149,17 +149,17 @@ export default {
 
     manageCommandRes() {
       this.typeCommandResponse()
-        .then(returnsText => {
+        .then((returnsText) => {
           // set height of textarea to avoid scrollbar
           if (returnsText) {
             this.fixTxtAreaHeight();
           }
-          this.$emit("command-finished");
+          this.$emit('command-finished');
         })
         .catch(() => {
-          if (this.cmd !== "clear" && this.cmd !== "cls") {
+          if (this.cmd !== 'clear' && this.cmd !== 'cls') {
             this.fixTxtAreaHeight();
-            this.$emit("command-finished");
+            this.$emit('command-finished');
           }
         });
     },
@@ -167,16 +167,16 @@ export default {
     // types the response
     typeCommandResponse() {
       return new Promise((resolve, reject) => {
-        let cmdValid = this.validateCommand();
+        const cmdValid = this.validateCommand();
         let returnsTxt = true;
         this.commandEntered = true;
 
-        if (cmdValid && cmdValid !== "defaultCmd") {
+        if (cmdValid && cmdValid !== 'defaultCmd') {
           // command response
           let cmdRes = cmdValid.response;
-          if (typeof cmdRes === "function") {
+          if (typeof cmdRes === 'function') {
             cmdRes = cmdRes();
-            if (typeof cmdRes === "string") {
+            if (typeof cmdRes === 'string') {
               this.$nextTick(() => {
                 this.typeText(cmdRes);
                 returnsTxt = true;
@@ -193,7 +193,7 @@ export default {
               resolve(returnsTxt);
             });
           }
-        } else if (cmdValid === "defaultCmd") {
+        } else if (cmdValid === 'defaultCmd') {
           this.$nextTick(() => {
             this.textAreaRows = this.textAreaRows + 1;
             reject();
@@ -208,7 +208,7 @@ export default {
     },
 
     typeText(text) {
-      this.textAreaTxt += "\n" + text;
+      this.textAreaTxt += `\n${text}`;
     },
     typeTextInline(text) {
       this.textAreaTxt += text;
@@ -223,9 +223,7 @@ export default {
     },
 
     getRoutesPath() {
-      let routesPath = this.$router.options.routes.map(route => {
-        return route.path;
-      });
+      const routesPath = this.$router.options.routes.map(route => route.path);
       return routesPath;
     },
 
@@ -238,17 +236,14 @@ export default {
     validateCommand() {
       this.cmd = this.cmd.toLowerCase();
       if (!this.defaultCommand()) {
-        let result = this.commands.filter(
-          cmdArr => cmdArr.command.toLowerCase() === this.cmd
-        );
+        const result = this.commands.filter(cmdArr => cmdArr.command.toLowerCase() === this.cmd);
         if (result.length === 1) {
           return result[0];
-        } else {
-          return false;
         }
+        return false;
       }
 
-      return "defaultCmd";
+      return 'defaultCmd';
     },
 
     // manages default commands
@@ -257,20 +252,20 @@ export default {
 
       // default commands
       switch (this.cmd) {
-        case "clear":
-        case "cls": {
-          this.$emit("command-clear");
+        case 'clear':
+        case 'cls': {
+          this.$emit('command-clear');
           defaultCmdFound = true;
           break;
         }
-        case "help": {
+        case 'help': {
           this.$nextTick(() => {
             this.typeText(this.helpText);
           });
           defaultCmdFound = true;
           break;
         }
-        case "cd": {
+        case 'cd': {
           if (this.terminalOptions.routing) {
             this.$nextTick(() => {
               this.typeText(this.cdText);
@@ -279,27 +274,29 @@ export default {
           }
           break;
         }
+        default: {
+          break;
+        }
       }
       if (this.terminalOptions.routing && !defaultCmdFound) {
         // check if cd command was called with a route
-        let cdMatch = this.cmd.match(constants.regexCd),
-          route;
-      
-        cdMatch !== null ? (route = cdMatch[1]) : (route = false);
+        const cdMatch = this.cmd.match(constants.regexCd)
+        let route
+
+        if (cdMatch !== null) [, route] = cdMatch
+        else route = false
 
         if (route) {
           if (route === this.$route.path) {
             this.$nextTick(() => {
-              this.typeText(`You are already here!`);
+              this.typeText('You are already here!');
             });
           } else if (this.findRoutes(route)) {
             this.$nextTick()
-              .then(() => {
-                return new Promise(resolve => {
-                  this.typeText(`Navigated to ${route}`);
-                  resolve(true);
-                });
-              })
+              .then(() => new Promise((resolve) => {
+                this.typeText(`Navigated to ${route}`);
+                resolve(true);
+              }))
               .then(() => {
                 this.$router.push(route);
               });
@@ -326,17 +323,20 @@ export default {
 
     // Verify that user name in terminal hasnt been altered
     _checkDirectoryIsDefault() {
-      let userMatch, isDefault;
+      let userMatch
+      let isDefault
 
       userMatch = this.textAreaTxt.match(new RegExp(this.directoryRegex));
 
       if (userMatch) {
-        userMatch = userMatch[1];
+        [, userMatch] = userMatch;
       } else {
         userMatch = false;
       }
 
-      this.directory == userMatch ? (isDefault = true) : (isDefault = false);
+      if (this.directory === userMatch) isDefault = true
+      else isDefault = false
+
       return isDefault;
     }
   }

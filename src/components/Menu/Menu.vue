@@ -16,7 +16,7 @@ export default {
   components: {
     Nav
   },
-  data(){
+  data() {
     return {
       logo
     }
@@ -64,8 +64,5 @@ export default {
     }
 
 
-
-
 </style>
-
 

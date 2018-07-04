@@ -9,21 +9,21 @@
           <li v-for="cmd in publicCmds" :key="cmd.command">{{cmd.command}}</li>
         </ul>
       </div>
-      <Terminal 
+      <Terminal
         class="marginBottom"
         :terminalOptions="options"
-        :commands="cmds" 
+        :commands="cmds"
         title="antoniosantos -- bash"
         directory="antoniosantos.io$"
         @isFullscreen="renderDummy"
         :newDistanceToTop="dummyPosition"
         :newSize="dummySize"></Terminal>
 
-      <Terminal ref="dummy" 
-        class="paddingBottom invisible" 
+      <Terminal ref="dummy"
+        class="paddingBottom invisible"
         title="antoniosantos -- bash"
-        directory="antoniosantos.io$" 
-        :commands="cmds" 
+        directory="antoniosantos.io$"
+        :commands="cmds"
         v-if="shouldRenderDummy"
         v-show="true"
         :isDummy="true"></Terminal>
@@ -32,11 +32,11 @@
 </template>
 
 <script>
-import Terminal from "../components/Terminal/Terminal.vue";
+import Terminal from '../components/Terminal/Terminal.vue';
 import H from '../costum/Helpers';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     Terminal
   },
@@ -44,37 +44,35 @@ export default {
     return {
       cmds: [
         {
-          command: "about",
-          description: "my general information",
-          response:  "Name: Antonio santos \nStudying: New Technologies of Communication in Aveiro\nAge:21"
+          command: 'about',
+          description: 'my general information',
+          response: 'Name: Antonio santos \nStudying: New Technologies of Communication in Aveiro\nAge:21'
         },
         {
-          command: "hobbies",
-          description: "my favorite activities",
-          response: "Web Development\nSurfing\nPhotography\nFilm Making"
-        },
-         {
-          command: "treasure",
-          description: "hidden",
-          hidden: true,
-          response: ()=>{
-            return ('you are rich');
-          }
+          command: 'hobbies',
+          description: 'my favorite activities',
+          response: 'Web Development\nSurfing\nPhotography\nFilm Making'
         },
         {
-          command: "flip",
-          description: "hidden",
+          command: 'treasure',
+          description: 'hidden',
           hidden: true,
-          response: ()=>{
-            if(Math.random()>0.5)  return 'cara';
-            else return 'croa';
+          response: () => ('you are rich')
+        },
+        {
+          command: 'flip',
+          description: 'hidden',
+          hidden: true,
+          response: () => {
+            if (Math.random() > 0.5) return 'cara';
+            return 'croa';
           }
         }
       ],
       options: {
-          routing:true,
-          emptyLog:true
-        },
+        routing: true,
+        emptyLog: true
+      },
       // ANIMATIONS
       shouldRenderDummy: false,
       windowSize: window.innerWidth,
@@ -82,14 +80,14 @@ export default {
       dummySize: {}
     };
   },
-  computed:{
-    publicCmds(){
+  computed: {
+    publicCmds() {
       return H.getPublicCommandsObj(this.cmds)
     }
   },
 
   methods: {
-    renderDummy(isFullscreen) { 
+    renderDummy(isFullscreen) {
       this.shouldRenderDummy = isFullscreen;
     },
     getDummyStyle() {
@@ -105,15 +103,15 @@ export default {
         width: event.currentTarget.innerWidth,
         height: event.currentTarget.innerHeight
       };
-      if(this.shouldRenderDummy) this.getDummyStyle();
+      if (this.shouldRenderDummy) this.getDummyStyle();
     }
   },
 
   beforeDestroy() {
-    window.removeEventListener("resize", this.handleWindowResize);
+    window.removeEventListener('resize', this.handleWindowResize);
   },
   mounted() {
-    window.addEventListener("resize", this.handleWindowResize);
+    window.addEventListener('resize', this.handleWindowResize);
   }
 };
 </script>

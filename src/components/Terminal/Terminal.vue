@@ -1,18 +1,23 @@
 <template>
   <div class="terminal" ref="terminal">
     <div class="terminal__top">
-      <TerminalButton :disabled="true" color="#f1605c" />  
-      <TerminalButton :disabled="!fullScreenActive" icon="minus" color="#fdbe2a"  @click="goFullscreen"/>  
+      <TerminalButton :disabled="true" color="#f1605c" />
+      <TerminalButton
+        :disabled="!fullScreenActive"
+        icon="minus"
+        color="#fdbe2a"
+        @click="goFullscreen"
+      />
       <TerminalButton color="#45b748" @click="goFullscreen"/>
       <div class="terminal__top--title">{{title}}</div>
     </div>
     <div class="terminal__container" ref="terminalContainer">
       <div class="terminal__textarea" v-for="textArea in nTextAreas" :key="textArea">
-        <TerminalTextArea 
-          @command-finished="appendTextArea" 
-          @command-clear="clearTerminal" 
+        <TerminalTextArea
+          @command-finished="appendTextArea"
+          @command-clear="clearTerminal"
           @command-log="saveCmdLog"
-          :id="textArea" :commands="commands" 
+          :id="textArea" :commands="commands"
           :directory="directory+ ' '"
           :commandLogs="commandLogs"
           :terminalOptions="mergedTerminalOptions"
@@ -24,19 +29,20 @@
 </template>
 
 <script>
-import TerminalTextArea from "./TerminalTextArea.vue";
-import TerminalButton from "./TerminalButton.vue";
-import { TimelineMax } from "gsap";
+import { TimelineMax } from 'gsap';
 import H from '../../costum/Helpers';
 
+import TerminalTextArea from './TerminalTextArea.vue';
+import TerminalButton from './TerminalButton.vue';
+
 export default {
-  name: "Terminal",
+  name: 'Terminal',
   components: {
     TerminalTextArea,
     TerminalButton
   },
   props: {
-     title: {
+    title: {
       type: String,
       required: false,
       default: 'terminal -- root'
@@ -50,20 +56,20 @@ export default {
       type: Array,
       required: true
     },
-    terminalOptions:{
+    terminalOptions: {
       type: Object,
       required: false,
-      default: ()=>{return{routing:true,emptyLog:true}}
+      default: () => ({ routing: true, emptyLog: true })
     },
     // ANIMATIONS
     newDistanceToTop: {
       type: Object
     },
-    newSize:{
+    newSize: {
       type: Object
     },
     isDummy: {
-      type:Boolean
+      type: Boolean
     }
   },
   data() {
@@ -73,18 +79,18 @@ export default {
       nTextAreas: [0],
       inputLog: [],
       mountedRoute: '',
-      defaultOptions: {routing:true,emptyLog:true},
+      defaultOptions: { routing: true, emptyLog: true },
       // ANIMATIONS
       fullScreenActive: false,
       distanceToTop: {},
-      size: {width:438},
+      size: { width: 438 },
       isFullscreen: false,
     };
   },
   methods: {
     appendTextArea() {
       // random string to prevent duplicate keys
-      let nTextArea = btoa(Math.random());
+      const nTextArea = btoa(Math.random());
       this.nTextAreas.push(nTextArea);
     },
     clearTerminal() {
@@ -92,24 +98,25 @@ export default {
       this.nTextAreas = [btoa(Math.random())];
     },
 
-    saveCmdLog(cmd){
+    saveCmdLog(cmd) {
       this.inputLog.push(cmd);
     },
 
-    scrollToBottomTerminal(){
-          let elContainer = this.$refs.terminalContainer;
-          elContainer.scrollTop = elContainer.scrollHeight;
+    scrollToBottomTerminal() {
+      const elContainer = this.$refs.terminalContainer;
+      elContainer.scrollTop = elContainer.scrollHeight;
     },
     // ANIMATIONS
     goFullscreen() {
-      let distanceToTop, el, elContainer, fullscreenTimeline, windowedTimeline;
-      distanceToTop = this.distanceToTop;
+      let fullscreenTimeline
+      let windowedTimeline
 
-      el = this.$refs.terminal;
-      elContainer = this.$refs.terminalContainer;
+      const { distanceToTop } = this
+      const el = this.$refs.terminal
+      const elContainer = this.$refs.terminalContainer
 
       if (!this.fullScreenActive) {
-        fullscreenTimeline = new TimelineMax({paused: true});
+        fullscreenTimeline = new TimelineMax({ paused: true });
 
         this.size = {
           width: this.$refs.terminal.offsetWidth
@@ -119,78 +126,79 @@ export default {
         fullscreenTimeline.fromTo(el,0.5,{ minWidth:this.minWidth,position: "fixed", top: distanceToTop.y, left: distanceToTop.x }, { minWidth: "100%", position: "fixed", height: "100%", zIndex: "999", top: 0, left: 0, ease: Power4.easeOut } )
         // eslint-disable-next-line
                           .fromTo( elContainer, 0.5, { minHeight: "100px", maxHeight: "300px" }, { minHeight: "100%", maxHeight: "100%", ease:  Expo.easeOut,onComplete:() => {
-                             this.isFullscreen = true;
-                          }},0 );
+            this.isFullscreen = true;
+          }
+          }, 0);
         fullscreenTimeline.play();
         this.fullScreenActive = true;
       } else {
-        windowedTimeline = new TimelineMax({paused: true});
+        windowedTimeline = new TimelineMax({ paused: true });
         // eslint-disable-next-line
         windowedTimeline.fromTo( elContainer, 0.2, { minHeight: "100%", maxHeight: "100%" }, { minHeight: "100px", maxHeight: "300px", clearProps: "minHeight,maxHeight" } )
         // eslint-disable-next-line
                         .fromTo( el, 0.5, { position: "fixed", top: 0, left: 0, height:"100%"}, { minWidth: this.minWidth, position: "absolute", top: distanceToTop.y, left: distanceToTop.x,  height:"auto",clearProps: "left,top,position,minWidth,zIndex,height", ease: Power4.easeOut,onComplete:() => {
-                             this.isFullscreen = false;
-                             elContainer.scrollTo(0,elContainer.scrollHeight);
-                          }},0 );
+            this.isFullscreen = false;
+            elContainer.scrollTo(0, elContainer.scrollHeight);
+          }
+          }, 0);
         windowedTimeline.play();
 
         this.fullScreenActive = false;
-
       }
     },
-    handleWindowResize(){
+    handleWindowResize() {
       // update distances for animations
-      if(!this.isDummy && !this.isFullscreen){
+      if (!this.isDummy && !this.isFullscreen) {
         this.distanceToTop = H.getDistanceToTop(this.$refs.terminal);
-      } else if(!this.isDummy){
+      } else if (!this.isDummy) {
         this.distanceToTop = this.newDistanceToTop;
         this.size = this.newSize;
-      } 
+      }
     }
   },
-  computed:{
-    minWidth(){
-      return this.size.width + "px";
+  computed: {
+    minWidth() {
+      return `${this.size.width}px`;
     },
     // saves array with default commands + user input commands
-    commandLogs(){
-      if(!this.mergedTerminalOptions.emptyLog){
+    commandLogs() {
+      if (!this.mergedTerminalOptions.emptyLog) {
         let defaultCommands = H.getPublicCommandsArr(this.commands);
         // adding empty string to first element so that the last log resets
         defaultCommands = [''].concat(defaultCommands);
         return defaultCommands.concat(this.inputLog);
-      } 
+      }
       return [''].concat(this.inputLog);
     },
-    mergedTerminalOptions(){
-      return  Object.assign(this.defaultOptions,this.terminalOptions);
+    mergedTerminalOptions() {
+      return Object.assign(this.defaultOptions, this.terminalOptions);
     }
   },
-  watch:{
-    $route (to){
-        if(this.mergedTerminalOptions.routing && to.path === this.mountedRoute){
-          this.scrollToBottomTerminal();
-        }
+  watch: {
+    $route(to) {
+      if (this.mergedTerminalOptions.routing && to.path === this.mountedRoute) {
+        this.scrollToBottomTerminal();
+      }
     },
 
     // ANIMATIONS
-    isFullscreen(){
-      this.$emit('is-fullscreen',this.isFullscreen);
+    isFullscreen() {
+      this.$emit('is-fullscreen', this.isFullscreen);
     }
   },
   mounted() {
-    if(this.mergedTerminalOptions.routing){
-      this.$nextTick(()=>{
+    if (this.mergedTerminalOptions.routing) {
+      this.$nextTick(() => {
         this.mountedRoute = this.$route.path;
       })
     }
 
     // ANIMATIONS
     this.distanceToTop = H.getDistanceToTop(this.$refs.terminal);
-    window.addEventListener("resize", this.handleWindowResize);
+    window.addEventListener('resize', this.handleWindowResize);
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.handleWindowResize);
+    window.removeEventListener('resize', this.handleWindowResize);
   }
 };
 </script>

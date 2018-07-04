@@ -5,7 +5,7 @@ import 'vue-awesome/icons/minus'
 import Icon from 'vue-awesome/components/Icon.vue'
 
 import App from './App.vue'
-import { routes } from './routes'
+import routes from './routes'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)

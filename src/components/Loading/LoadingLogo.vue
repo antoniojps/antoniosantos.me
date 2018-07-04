@@ -3,9 +3,10 @@
 </template>
 
 <script>
-import { TweenMax } from "gsap";
+import { TweenMax } from 'gsap';
+
 export default {
-  name: "LoadingLogo",
+  name: 'LoadingLogo',
   data() {
     return {};
   },

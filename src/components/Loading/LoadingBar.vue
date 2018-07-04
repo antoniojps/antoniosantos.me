@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import { TweenMax } from "gsap";
+import { TweenMax } from 'gsap';
 
 export default {
-  name: "LoadingBar",
+  name: 'LoadingBar',
   props: {
     percentage: {
       required: false,
@@ -16,12 +16,12 @@ export default {
     }
   },
   methods: {
-      animBar(){
-        TweenMax.to(this.$refs.bar, 1, { width: this.percentage + '%' });
-      }
+    animBar() {
+      TweenMax.to(this.$refs.bar, 1, { width: `${this.percentage}%` });
+    }
   },
   mounted() {
-     this.animBar();
+    this.animBar();
   },
   watch: {
     percentage() {

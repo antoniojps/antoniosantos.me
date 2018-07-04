@@ -7,27 +7,27 @@
 
 <script>
 
-    import LoadingLogo from './LoadingLogo.vue';
-    import LoadingBar from './LoadingBar.vue';
-    //import {TweenMax} from 'gsap';
+import LoadingLogo from './LoadingLogo.vue';
+import LoadingBar from './LoadingBar.vue';
+// import {TweenMax} from 'gsap';
 
 
-    export default {
-        name: "LoadingScreen",
-        components:{
-            LoadingLogo,
-            LoadingBar
-        },
-        props:{
-            finished:{
-                type:Boolean,
-                default: false
-            },
-            percentage:{
-                default: 0
-            }
-        }
+export default {
+  name: 'LoadingScreen',
+  components: {
+    LoadingLogo,
+    LoadingBar
+  },
+  props: {
+    finished: {
+      type: Boolean,
+      default: false
+    },
+    percentage: {
+      default: 0
     }
+  }
+}
 </script>
 
 <style lang="scss">

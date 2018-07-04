@@ -1,5 +1,5 @@
 const constants = {
-    regexCd: /^\bcd\s+(.*)$/
+  regexCd: /^\bcd\s+(.*)$/
 }
 
 export default constants;

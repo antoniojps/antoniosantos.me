@@ -27,34 +27,33 @@
 </template>
 
 <script>
-  import {TweenMax} from "gsap";
+import { TweenMax } from 'gsap';
 
-  export default {
-    props: {
-      msg: String
-    },
-    data() {
-      return {
-        navOpen: false
-      }
-    },
-    methods: {
-      anim() {
-        const containerEl = document.querySelector('.nav__container'),
-          filterEl = document.querySelector('.nav__filter');
-
-        if (!this.navOpen) {
-          TweenMax.to(containerEl, .3, {x: '0%'});
-          TweenMax.fromTo(filterEl, .2, {autoAlpha:0, display: 'none'},{autoAlpha:.2, display: 'block'});
-
-        } else {
-          TweenMax.to(containerEl, .2 , {x: '-100%'});
-          TweenMax.fromTo(filterEl, .2, {autoAlpha:.2, display: 'block'},{autoAlpha:0, display: 'none'});
-        }
-        this.navOpen = !this.navOpen;
-      }
+export default {
+  props: {
+    msg: String
+  },
+  data() {
+    return {
+      navOpen: false
     }
-  };
+  },
+  methods: {
+    anim() {
+      const containerEl = document.querySelector('.nav__container')
+      const filterEl = document.querySelector('.nav__filter')
+
+      if (!this.navOpen) {
+        TweenMax.to(containerEl, 0.3, { x: '0%' });
+        TweenMax.fromTo(filterEl, 0.2, { autoAlpha: 0, display: 'none' }, { autoAlpha: 0.2, display: 'block' });
+      } else {
+        TweenMax.to(containerEl, 0.2, { x: '-100%' });
+        TweenMax.fromTo(filterEl, 0.2, { autoAlpha: 0.2, display: 'block' }, { autoAlpha: 0, display: 'none' });
+      }
+      this.navOpen = !this.navOpen;
+    }
+  }
+};
 </script>
 
 <style lang="scss">

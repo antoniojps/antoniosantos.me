@@ -1,0 +1,110 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+
+p {
+  font-size: $sizeBase;
+  line-height: $sizeXLarge;
+  color:$colorBase2;
+  padding:{
+    bottom: $spacingBase;
+  }
+}
+
+h1,h2,h3,h4 {
+  font-weight:$bold;
+  color:$colorBase;
+}
+
+h1 {
+  font-size:$sizeXMedium;
+  padding:{
+    bottom: $spacingBase;
+  }
+  @include screen(md) {
+    font-size:$sizeXLarge;
+    padding:{
+      bottom: $spacingLarge;
+    }
+  }
+}
+
+h2{
+  font-size:$sizeLarge;
+  padding:{
+    bottom: $spacingBase;
+  }
+
+}
+
+h3 {
+  font-size: $sizeMedium;
+  padding:{
+    bottom: $spacingLSmall;
+  }
+}
+
+h4 {
+  font-size: $sizeBase;
+  padding:{
+    bottom: $spacingLSmall;
+  }
+}
+
+.highlight {
+  color: $colorVerde;
+}
+
+.font--alternative{
+  font-family:$fontAlternative;
+}
+
+.bold {
+  font-weight:$bold;
+}
+
+.regular {
+  font-weight:$regular;
+}
+
+.size-xl {
+  font-size:$sizeXLarge;
+}
+
+.size-lg{
+  font-size:$sizeLarge;
+}
+
+.size-md{
+  font-size:$sizeMedium;
+}
+
+.size-sm{
+  font-size:$sizeSmall;
+}
+
+.align-right {
+  text-align:right;
+}
+
+.align-left {
+  text-align:left;
+}
+
+.align-center {
+  text-align:center;
+}
+
+.faded {
+  color:$colorBase4;
+}
+
+.grey {
+  color:$colorBase2;
+}
+
+.active {
+  color:$colorVerde;
+}
+

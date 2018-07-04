@@ -1,0 +1,16 @@
+/* include para criar queries de acordo com os breakpoints
+  Exemplo:
+
+  @include screen(md){
+    // estilos para ecras superiors a md
+  }
+*/
+
+@mixin screen($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+}
+

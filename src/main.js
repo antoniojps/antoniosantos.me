@@ -1,10 +1,31 @@
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import 'vue-awesome/icons/expand'
+import 'vue-awesome/icons/minus'
+import Icon from 'vue-awesome/components/Icon.vue'
 
-Vue.config.productionTip = false;
+import App from './App.vue'
+import { routes } from './routes'
+
+Vue.config.productionTip = false
+Vue.use(VueRouter)
+
+Vue.component('icon', Icon)
+
+// Global directive for focus in terminal
+Vue.directive('focus', {
+  inserted(el) {
+    Vue.nextTick(() => {
+      el.focus()
+    })
+  }
+})
+
+const router = new VueRouter({
+  routes
+})
 
 new Vue({
   router,
-  render: h => h(App),
-}).$mount('#app');
+  render: h => h(App)
+}).$mount('#app')

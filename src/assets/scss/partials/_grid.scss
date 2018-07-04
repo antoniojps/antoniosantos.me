@@ -1,0 +1,132 @@
+.row {
+  float:none;
+  max-width:730px;
+  width:100%;
+  margin:{
+    left:auto;
+    right:auto;
+  }
+  padding:{
+    left:$spacingBase;
+    right:$spacingBase;
+  }
+
+  @include screen(md){
+    padding:{
+      left:$spacingLarge;
+      right:$spacingLarge;
+    }
+
+  }
+}
+
+.container{
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+
+.mobile {
+  display:flex;
+  @include screen(md){
+    display:none;
+  }
+}
+
+.desktop {
+  display:none;
+  @include screen(md){
+    display:flex;
+  }
+}
+
+.paddingLarge {
+  padding:$spacingLarge;
+}
+
+.paddingBase {
+  padding:$spacingBase;
+}
+
+.paddingFix{
+  padding:0;
+}
+
+.paddingVertLarge {
+  padding:{
+    top:$spacingLarge;
+    bottom:$spacingLarge;
+  }
+}
+
+.paddingVertBase {
+  padding:{
+    top:$spacingBase;
+    bottom:$spacingBase;
+  }
+}
+
+.paddingBottom {
+  padding:{
+    bottom:$spacingBase;
+  }
+}
+.paddingBottomLarge {
+  padding:{
+    bottom:$spacingLarge;
+  }
+}
+
+.marginVertLarge {
+  margin:{
+    top:$spacingLarge;
+    bottom:$spacingLarge;
+  }
+}
+
+.marginVertBase {
+  margin:{
+    top:$spacingBase;
+    bottom:$spacingBase;
+  }
+}
+
+.marginBottom {
+  margin:{
+    bottom:$spacingBase;
+  }
+}
+.marginBottomLarge {
+  margin:{
+    bottom:$spacingLarge;
+  }
+}
+
+.expandir {
+  width:100%;
+  @include screen(sm){
+    width:auto;
+  }
+}
+
+
+.floatLeft {
+  float:left;
+}
+
+.floatRight {
+  float:right;
+}
+
+.containerSpacing {
+  margin: {
+    top:$spacingBase;
+    bottom:$spacingBase;
+  }
+}
+.containerSpacingLg {
+  margin: {
+    top:$spacingLarge;
+    bottom:$spacingLarge;
+  }
+}

@@ -8,6 +8,7 @@
 
 html,body {
   font-family: $font;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -44,16 +45,17 @@ hr {
 }
 
 .img-responsive {
-  max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  width: auto;
 }
 
 // links
 
 a {
-  color: $colorVerde;
-  text-decoration: underline;
+  color: $colorAzul;
+  text-decoration: none;
   outline: 0;
+  font-weight: bold;
 
 }
 

@@ -16,14 +16,14 @@ $colorBase: #000;
 $colorBase2: #181b1f;
 $colorBase3: #1e2126;
 $colorBase4: #23272d;
-$colorBase5: #363e54;
+$colorBase5: #8d9298;
 $colorBase6: #C0CCDA;
 $colorBase7: #E5E9F2;
 
 $colorVerde: #45b748;
 $colorVerde2: #C5D45A;
 $colorVerde3: #8a962b;
-$colorAzul: #20A0FF;
+$colorAzul: #78A3D8;
 $colorAmarelo: #fdbe2a;
 $colorVermelho: #f1605c;
 $colorWhite: #fff;
@@ -39,7 +39,7 @@ $sizeMedium: 1rem; // 16px
 $sizeXSmall: $sizeMedium*.75; // 12px
 $sizeSmall: $sizeMedium*.875; // 14px
 $sizeBase: $sizeMedium*1; // 16px
-$sizeXMedium: $sizeMedium*1.5; // 24px
+$sizeXMedium: $sizeMedium*1.125; // 18px
 $sizeLarge: $sizeMedium*1.625; // 26px
 $sizeXLarge: $sizeMedium*2.25; // 36px
 $sizeXXLarge: $sizeMedium*2.5; // 40px
@@ -50,7 +50,8 @@ $borderSize: 1px;
 // Size
 $spacingXSmall: $sizeMedium * .1875; // 3px
 $spacingSmall: $sizeMedium * .375; // 6px
-$spacingLSmall: $sizeMedium* .75; // 12px
+$spacingLSmall: $sizeMedium* .5; // 8px
+$spacingXLSmall: $sizeMedium* .75; // 12px
 $spacingBase: $sizeMedium*1.625; // 26px
 $spacingAverage: $sizeMedium*2.25; // 36px
 $spacingLarge: $sizeMedium*2.5; // 40px

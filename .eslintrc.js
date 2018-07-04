@@ -12,7 +12,11 @@ module.exports = {
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'semi': 'off',
     'comma-dangle': 'off',
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": 3,
+      "multiline": 1
+  }]
   },
   parserOptions: {
     parser: 'babel-eslint'

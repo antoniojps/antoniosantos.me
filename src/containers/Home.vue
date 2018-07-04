@@ -19,7 +19,8 @@
         :newDistanceToTop="dummyPosition"
         :newSize="dummySize"></Terminal>
 
-      <Terminal ref="dummy"
+      <Terminal
+        ref="dummy"
         class="paddingBottom invisible"
         title="antoniosantos -- bash"
         directory="antoniosantos.io$"
@@ -32,8 +33,8 @@
 </template>
 
 <script>
-import Terminal from '../components/Terminal/Terminal.vue';
-import H from '../costum/Helpers';
+import Terminal from '@/components/Terminal/Terminal.vue';
+import H from '@/costum/Helpers';
 
 export default {
   name: 'Home',

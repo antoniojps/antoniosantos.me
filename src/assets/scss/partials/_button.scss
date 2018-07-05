@@ -1,0 +1,48 @@
+.btn {
+  font-size: $sizeBase;
+  background-color: transparent;
+  padding: $spacingXSmall $sizeSmall;
+  border-radius:$radius * 2;
+  color:$colorWhite;
+  font-family: $font;
+  text-transform:uppercase;
+  font-weight:$bold;
+  cursor:pointer;
+  border: 1px solid rgba($colorWhite,0.2);
+  transition: border 0.3s;
+  display:flex;
+  align-items: center;
+
+  &:hover{
+    border: 1px solid rgba($colorWhite,1);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &__icon{
+    height:$sizeBase;
+  }
+
+  &--icon{
+    svg{
+      margin-right: $spacingSmall;
+    }
+    &-only{
+      padding: $spacingSmall;
+      svg {
+        margin-right:0;
+      }
+    }
+  }
+
+  &--small{
+    font-size:$sizeSmall;
+    letter-spacing: 3.5px;
+
+    svg{
+      height:$sizeSmall
+    }
+  }
+}

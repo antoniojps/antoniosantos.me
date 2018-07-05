@@ -1,9 +1,8 @@
 .nav {
-  cursor: pointer;
   color: #fff;
   &__btn {
     padding: $spacingBase;
-
+    cursor: pointer;
     &--line {
       width: 3.5rem;
       height: 0.4rem;
@@ -15,6 +14,9 @@
   }
 
   &__container {
+    display:flex;
+    flex-direction: column;
+    overflow:auto;
     z-index: 30;
     transform: translateX(-100%);
     min-width: $minWidth;
@@ -24,7 +26,7 @@
     height: 100%;
     top: 0;
     left:0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0;
     background: linear-gradient(-45deg, $colorBase, $colorBase2, $colorAzul);
     background-size: 400% 400%;
     -webkit-animation: Gradient 15s ease infinite;
@@ -33,6 +35,7 @@
 
     @include screen(md) {
       width: 400px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     }
 
     @keyframes Gradient {
@@ -48,13 +51,14 @@
     }
 
     ul {
+      cursor: pointer;
       li {
         padding: $spacingBase $spacingXLarge;
       }
     }
 
     &-header{
-      font:{
+      font: {
         family:$fontAlternative;
         size:$sizeSmall;
       }
@@ -62,7 +66,7 @@
     }
 
     &-description{
-      font:{
+      font: {
         weight:$bold;
         size: $sizeXMedium;
       }
@@ -82,13 +86,28 @@
 
     ul li:first-child {
       padding: $spacingBase;
-      &:hover, &:active {
+    }
+
+    &-footer{
+      padding: $spacingBase $spacingXLarge;
+      margin: auto 0 $spacingLarge 0;
+      ul {
+        list-style: none;
+        display:flex;
+        flex-wrap: wrap;
+
+        li {
+          padding: 0 !important;
+          margin-right: $sizeSmall;
+          margin-top: $spacingBase;
+        }
       }
     }
 
   }
 
   &__filter {
+    cursor: pointer;
     z-index: 20;
     position: fixed;
     top: 0;

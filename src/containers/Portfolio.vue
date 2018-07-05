@@ -50,13 +50,9 @@ export default {
           keywords: [
             'Vue JS',
             'PHP',
-            'Javascript/ES6',
-            'SCSS',
-            'Webpack',
-            'Git',
-            'Nginx',
-            'MySQL'
-          ]
+            'Javascript/ES6'
+          ],
+          link: 'http://google.pt'
         },
         {
           title: 'ei carambas que cena',
@@ -72,7 +68,6 @@ export default {
             'Nginx',
             'MySQL'
           ],
-          description: 'Uepa',
           link: 'http://google.pt'
         }
       ]

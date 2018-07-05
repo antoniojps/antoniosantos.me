@@ -59,6 +59,8 @@ export default {
 
 .portfolio {
   &__card {
+    display: flex;
+    flex-direction: column;
     opacity:0;
     transform:translateX(-16px);
     background-color: $colorBg;
@@ -88,6 +90,7 @@ export default {
 
     &-keywords {
       margin-top: $spacingXLSmall;
+      margin-bottom: $spacingBase;
       ul {
         list-style-type: none;
         display: flex;
@@ -105,7 +108,7 @@ export default {
     }
 
     &-link {
-      margin-top: $spacingBase;
+      margin: auto 0 0 0;
     }
   }
 }

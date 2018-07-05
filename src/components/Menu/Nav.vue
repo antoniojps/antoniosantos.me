@@ -26,6 +26,22 @@
             </div>
           </router-link>
         </ul>
+        <div class="nav__container-footer">
+          <ul>
+            <li class="nav__container-footer__li" title="Github">
+              <ButtonNav link="http://google.pt" icon="brands/github" />
+            </li>
+            <li class="nav__container-footer__li" title="LinkedIn">
+              <ButtonNav link="/portfolio" icon="brands/linkedin-in" />
+            </li>
+            <li class="nav__container-footer__li" title="Behance">
+              <ButtonNav link="/portfolio" icon="brands/behance" />
+            </li>
+            <li class="nav__container-footer__li" title="Youtube">
+              <ButtonNav link="/portfolio" text="Contact" />
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -33,8 +49,12 @@
 
 <script>
 import { TweenMax } from 'gsap';
+import ButtonNav from '@/components/Shared/ButtonNav.vue'
 
 export default {
+  components: {
+    ButtonNav
+  },
   props: {
     msg: String
   },
@@ -63,6 +83,6 @@ export default {
 
 <style lang="scss">
 
-  @import '../../assets/scss/styles.scss';
+  @import '@/assets/scss/styles.scss';
 
 </style>

@@ -4,6 +4,7 @@ import 'vue-awesome/icons/expand'
 import 'vue-awesome/icons/minus'
 import Icon from 'vue-awesome/components/Icon.vue'
 import VueConfetti from 'vue-confetti'
+import { VTooltip } from 'v-tooltip'
 
 import App from './App.vue'
 import routes from './routes'
@@ -13,6 +14,8 @@ Vue.use(VueRouter)
 Vue.use(VueConfetti)
 
 Vue.component('icon', Icon)
+
+Vue.directive('tooltip', VTooltip)
 
 // Global directive for focus in terminal
 Vue.directive('focus', {
@@ -29,8 +32,5 @@ const router = new VueRouter({
 
 new Vue({
   router,
-  render: h => h(App),
-  data: {
-    party: false
-  }
+  render: h => h(App)
 }).$mount('#app')

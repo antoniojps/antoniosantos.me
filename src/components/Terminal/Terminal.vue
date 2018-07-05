@@ -8,7 +8,15 @@
         color="#fdbe2a"
         @click="goFullscreen"
       />
-      <TerminalButton color="#45b748" @click="goFullscreen"/>
+      <TerminalButton
+        color="#45b748"
+        @click="goFullscreen"
+        v-tooltip="{
+          content: 'fullscreen',
+          show: showTooltip,
+          trigger: 'manual'
+        }"
+      />
       <div class="terminal__top--title">{{title}}</div>
     </div>
     <div class="terminal__container" ref="terminalContainer">
@@ -86,6 +94,7 @@ export default {
       distanceToTop: {},
       size: { width: 438 },
       isFullscreen: false,
+      showTooltip: false
     };
   },
   methods: {
@@ -109,6 +118,7 @@ export default {
     },
     // ANIMATIONS
     goFullscreen() {
+      this.showTooltip = false
       let fullscreenTimeline
       let windowedTimeline
 
@@ -180,6 +190,7 @@ export default {
       if (this.mergedTerminalOptions.routing && to.path === this.mountedRoute) {
         this.scrollToBottomTerminal();
       }
+      if (to.path !== '/') this.showTooltip = false;
     },
 
     // ANIMATIONS
@@ -197,6 +208,7 @@ export default {
     // ANIMATIONS
     this.distanceToTop = H.getDistanceToTop(this.$refs.terminal);
     window.addEventListener('resize', this.handleWindowResize);
+    if (!this.isDummy) this.showTooltip = true
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleWindowResize);

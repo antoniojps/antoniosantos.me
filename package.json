@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "gsap": "^2.0.1",
+    "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.16",
     "vue-awesome": "^3.0.3",
     "vue-confetti": "^0.4.1",

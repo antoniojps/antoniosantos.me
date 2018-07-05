@@ -14,12 +14,17 @@
             <div class="close"></div>
           </li>
           <router-link tag="li" to="/" exact>
-            Home
+            <div class="nav__container-header">home</div>
+            <div class="nav__container-description">
+              <span>A WEIRD TERMINAL, HOW BASIC?</span>
+            </div>
           </router-link>
           <router-link tag="li" to="/portfolio" exact>
-            Portfolio
+            <div class="nav__container-header">portfolio</div>
+            <div class="nav__container-description">
+              <span>ACADEMIC AND PERSONAL PROJECTS</span>
+            </div>
           </router-link>
-          <li>Blog</li>
         </ul>
       </div>
     </div>
@@ -47,8 +52,8 @@ export default {
         TweenMax.to(containerEl, 0.3, { x: '0%' });
         TweenMax.fromTo(filterEl, 0.2, { autoAlpha: 0, display: 'none' }, { autoAlpha: 0.2, display: 'block' });
       } else {
-        TweenMax.to(containerEl, 0.2, { x: '-100%' });
-        TweenMax.fromTo(filterEl, 0.2, { autoAlpha: 0.2, display: 'block' }, { autoAlpha: 0, display: 'none' });
+        TweenMax.to(containerEl, 0.3, { x: '-100%' });
+        TweenMax.fromTo(filterEl, 0.3, { autoAlpha: 0.2, display: 'block' }, { autoAlpha: 0, display: 'none' });
       }
       this.navOpen = !this.navOpen;
     }

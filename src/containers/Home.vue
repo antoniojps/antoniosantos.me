@@ -15,7 +15,7 @@
         :commands="cmds"
         title="antoniosantos -- bash"
         directory="antoniosantos.io$"
-        @isFullscreen="renderDummy"
+        @is-fullscreen="renderDummy"
         :newDistanceToTop="dummyPosition"
         :newSize="dummySize"></Terminal>
 
@@ -55,6 +55,11 @@ export default {
           response: 'Web Development\nSurfing\nPhotography\nFilm Making'
         },
         {
+          command: 'party',
+          description: 'start the partyyyyy or stop',
+          response: this.handleParty
+        },
+        {
           command: 'treasure',
           description: 'hidden',
           hidden: true,
@@ -74,6 +79,7 @@ export default {
         routing: true,
         emptyLog: true
       },
+      party: false,
       // ANIMATIONS
       shouldRenderDummy: false,
       windowSize: window.innerWidth,
@@ -105,9 +111,17 @@ export default {
         height: event.currentTarget.innerHeight
       };
       if (this.shouldRenderDummy) this.getDummyStyle();
+    },
+    handleParty() {
+      this.party = !this.party
+      if (this.party) {
+        this.$confetti.start()
+        return ('OHHH YEAHHH')
+      }
+      this.$confetti.stop()
+      return ('thats sad...')
     }
   },
-
   beforeDestroy() {
     window.removeEventListener('resize', this.handleWindowResize);
   },

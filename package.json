@@ -11,6 +11,7 @@
     "gsap": "^2.0.1",
     "vue": "^2.5.16",
     "vue-awesome": "^3.0.3",
+    "vue-confetti": "^0.4.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

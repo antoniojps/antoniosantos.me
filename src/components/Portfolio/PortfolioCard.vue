@@ -59,11 +59,18 @@ export default {
 
 .portfolio {
   &__card {
+    opacity:0;
+    transform:translateX(-16px);
     background-color: $colorBg;
     width: 100%;
     padding: $sizeLarge $sizeSmall;
     box-shadow: 0 4px 28px rgba(0, 0, 0, 0.05),
       0 6px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    &:hover {
+      box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+    }
 
     &-description {
       margin-top: $spacingBase;

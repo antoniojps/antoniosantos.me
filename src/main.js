@@ -3,12 +3,14 @@ import VueRouter from 'vue-router'
 import 'vue-awesome/icons/expand'
 import 'vue-awesome/icons/minus'
 import Icon from 'vue-awesome/components/Icon.vue'
+import VueConfetti from 'vue-confetti'
 
 import App from './App.vue'
 import routes from './routes'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+Vue.use(VueConfetti)
 
 Vue.component('icon', Icon)
 
@@ -27,5 +29,8 @@ const router = new VueRouter({
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  data: {
+    party: false
+  }
 }).$mount('#app')

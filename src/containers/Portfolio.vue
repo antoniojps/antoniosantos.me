@@ -9,6 +9,7 @@
 |
 <script>
 import PortfolioCard from '@/components/Portfolio/PortfolioCard.vue'
+import { TimelineLite } from 'gsap'
 
 export default {
   components: {
@@ -21,30 +22,71 @@ export default {
           title: 'YTRank.net',
           // eslint-disable-next-line
           img: require('@/assets/imgs/mockups/yt-rank.png'),
-          keywords: ['Vue JS', 'PHP', 'Javascript/ES6', 'SCSS', 'Webpack', 'Git', 'MySQL']
+          keywords: [
+            'Vue JS',
+            'PHP',
+            'Javascript/ES6',
+            'SCSS',
+            'Webpack',
+            'Git',
+            'MySQL'
+          ]
         },
         {
           title: 'Epa',
           // eslint-disable-next-line
           img: require('@/assets/imgs/mockups/yt-rank.png'),
-          keywords: ['Vue JS', 'PHP', 'Javascript/ES6', 'SCSS']
+          keywords: [
+            'Vue JS',
+            'PHP',
+            'Javascript/ES6',
+            'SCSS'
+          ]
         },
         {
           title: 'Uepa',
           // eslint-disable-next-line
           img: require('@/assets/imgs/mockups/yt-rank.png'),
-          keywords: ['Vue JS', 'PHP', 'Javascript/ES6', 'SCSS', 'Webpack', 'Git', 'Nginx', 'MySQL']
+          keywords: [
+            'Vue JS',
+            'PHP',
+            'Javascript/ES6',
+            'SCSS',
+            'Webpack',
+            'Git',
+            'Nginx',
+            'MySQL'
+          ]
         },
         {
           title: 'ei carambas que cena',
           // eslint-disable-next-line
           img: require('@/assets/imgs/mockups/yt-rank.png'),
-          keywords: ['Vue JS', 'PHP', 'Javascript/ES6', 'SCSS', 'Webpack', 'Git', 'Nginx', 'MySQL'],
+          keywords: [
+            'Vue JS',
+            'PHP',
+            'Javascript/ES6',
+            'SCSS',
+            'Webpack',
+            'Git',
+            'Nginx',
+            'MySQL'
+          ],
           description: 'Uepa',
           link: 'http://google.pt'
         }
       ]
     }
+  },
+  mounted() {
+    const timeline = new TimelineLite()
+    timeline.staggerTo(
+      '.portfolio__card',
+      0.4,
+      { opacity: 1, x: 0 },
+      0.2
+    );
+    timeline.play()
   }
 }
 </script>
@@ -53,13 +95,14 @@ export default {
 @import '@/assets/scss/styles.scss';
 
 .portfolio {
-  &__list{
-    display:grid;
+  &__list {
+    display: grid;
     grid-template-columns: 100%;
     grid-gap: $spacingBase;
-    @include screen(sm){
+    @include screen(sm) {
       grid-template-columns: 1fr 1fr;
-  }
+    }
+    margin-bottom: $spacingXLarge;
   }
 }
 </style>

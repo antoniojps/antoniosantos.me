@@ -1,5 +1,7 @@
 <template>
-        <div class="loadingScreen__img"></div>
+        <div style="transform:scale(0.7)">
+          <div class="loadingScreen__img"></div>
+        </div>
 </template>
 
 <script>

@@ -7,17 +7,10 @@
     &--line {
       width: 3.5rem;
       height: 0.4rem;
-      background-color: $colorBase5;
+      background-color: $colorBase;
       border-radius: 10px;
       margin-top: 0;
       margin-bottom: 6px;
-    }
-
-    &:hover {
-      .nav__btn--line {
-        background-color: $colorBase;
-        transition: background-color .4s;
-      }
     }
   }
 
@@ -26,39 +19,53 @@
     transform: translateX(-100%);
     min-width: $minWidth;
     position: fixed;
-    background-color: $colorBase4;
+    background-image: linear-gradient(-180deg, $colorBase 0%, $colorBase2 0%, $colorBase 100%);
     width: 100%;
     height: 100%;
     top: 0;
     left:0;
-    
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
     @include screen(md) {
       width: 400px;
     }
 
     ul {
-      background-color: $colorBase3;
-
       li {
-        padding: $spacingBase;
-        &:hover {
-          background-color: $colorBase2;
-          transition: background-color .4s;
+        padding: $spacingBase $spacingXLarge;
+      }
+    }
 
+    &-header{
+      font:{
+        family:$fontAlternative;
+        size:$sizeXSmall;
+      }
+      margin-bottom: $spacingLSmall;
+    }
+
+    &-description{
+      font:{
+        weight:$bold;
+        size: $sizeXMedium;
+      }
+
+      span{
+        border-bottom: 1px solid transparent;
+        transition: border .2s ease;
+        &:hover {
+          border-bottom: 1px solid rgba($colorWhite,.4);
         }
       }
     }
 
     .router-link-active {
-      background-color: $colorBase2;
+      background-color: rgba($colorBase,0.3);
     }
 
     ul li:first-child {
       padding: $spacingBase;
-      background-color: $colorBase4;
       &:hover, &:active {
-        background-color: $colorBase3;
       }
     }
 
@@ -82,8 +89,8 @@
 .close {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: $sizeLarge;
+  height: $sizeLarge;
   overflow: hidden;
 
 
@@ -94,7 +101,7 @@
     top: 50%;
     left: 0;
     background: #fff;
-    height: 8px;
+    height: 4px;
     margin-top: -4px;
     border-radius: 5px;
   }

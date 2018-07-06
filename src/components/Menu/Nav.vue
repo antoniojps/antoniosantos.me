@@ -9,36 +9,54 @@
       <div class="nav__filter" @click="anim"></div>
 
       <div class="nav__container">
-        <ul @click="anim">
-          <li>
+        <ul>
+          <li @click="anim">
             <div class="close"></div>
           </li>
-          <router-link tag="li" to="/" exact>
+          <router-link
+            tag="li"
+            to="/"
+            exact
+            @click.native="anim"
+            >
             <div class="nav__container-header">home</div>
             <div class="nav__container-description">
               <span>A WEIRD TERMINAL, HOW BASIC?</span>
             </div>
           </router-link>
-          <router-link tag="li" to="/portfolio" exact>
+          <router-link
+            tag="li"
+            to="/portfolio"
+            exact
+            @click.native="anim"
+            >
             <div class="nav__container-header">portfolio</div>
             <div class="nav__container-description">
               <span>ACADEMIC AND PERSONAL PROJECTS</span>
             </div>
           </router-link>
+            <li>
+              <a href="mailto:antoniojmsps@gmail.com">
+                <div class="nav__container-header">contact</div>
+                <div class="nav__container-description">
+                  <span>CONTACT ME I WILL ASNWER WITHIN 24 HOURS</span>
+                </div>
+              </a>
+            </li>
         </ul>
         <div class="nav__container-footer">
           <ul>
             <li class="nav__container-footer__li" title="Github">
-              <ButtonNav link="http://google.pt" icon="brands/github" />
+              <ButtonNav link="https://github.com/antoniojps" icon="brands/github" />
             </li>
             <li class="nav__container-footer__li" title="LinkedIn">
-              <ButtonNav link="/portfolio" icon="brands/linkedin-in" />
+              <ButtonNav link="https://www.linkedin.com/in/antonio-pires-dos-santos/" icon="brands/linkedin-in" />
             </li>
             <li class="nav__container-footer__li" title="Behance">
-              <ButtonNav link="/portfolio" icon="brands/behance" />
+              <ButtonNav link="https://www.behance.net/antoniojps" icon="brands/behance" />
             </li>
-            <li class="nav__container-footer__li" title="Youtube" @click="anim">
-              <ButtonNav link="/portfolio" text="Contact" />
+            <li class="nav__container-footer__li">
+              <ButtonNav link="mailto:antoniojmsps@gmail.com" text="Contact" />
             </li>
           </ul>
         </div>

@@ -1,6 +1,7 @@
 const constants = {
   regexCd: /^\bcd\s+(.*)$/,
-  regexAbsoluteURL: /^https?:\/\//i
+  regexPath: /^\//i,
+  regexMailto: /^mailto:/i
 }
 
 export default constants;

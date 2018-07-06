@@ -1,13 +1,13 @@
 <template>
   <div>
-    <a :href="link" target="_blank" v-if="(link && isAbsoluteLink)">
+    <a :href="link" :target="isMailto ? '' : '_blank'" v-if="(link && !isPath)">
       <button class="btn btn--small btn--primary btn--icon" :class="classObj">
         <icon v-if="icon" class="btn__icon" :name="icon"></icon>
         {{text}}
       </button>
     </a>
 
-    <router-link :to="link" v-if="(link && !isAbsoluteLink)" exact>
+    <router-link :to="link" v-if="(link && isPath)" exact>
       <button class="btn btn--small btn--primary btn--icon" :class="classObj">
         <icon v-if="icon" class="btn__icon" :name="icon"></icon>
         {{text}}
@@ -36,7 +36,8 @@ export default {
     return {}
   },
   computed: {
-    isAbsoluteLink() { return constants.regexAbsoluteURL.test(this.link) },
+    isPath() { return constants.regexPath.test(this.link) },
+    isMailto() { return constants.regexMailto.test(this.link) },
     classObj() { return { 'btn--icon-only': !this.text } }
   }
 }

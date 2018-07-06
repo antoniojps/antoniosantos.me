@@ -9,6 +9,7 @@
             @keydown.enter.prevent='readCommand'
             @keydown.up.prevent='typePrevCommand'
             @keydown.down.prevent='typeNextCommand'
+            @run-command='runCommand'
             v-focus
             autofocus
             ref="txtArea"
@@ -19,8 +20,9 @@
 </template>
 
 <script>
-import H from '@/costum/Helpers';
-import constants from '@/costum/constants';
+import H from '@/costum/Helpers'
+import constants from '@/costum/constants'
+import { eventBus } from '@/main'
 
 export default {
   name: 'TerminalTextArea',
@@ -100,6 +102,15 @@ export default {
     }
   },
   methods: {
+    runCommand(cmd) {
+      eventBus.$off('run-command')
+      eventBus.$off('type-command')
+      this.typeCommand(cmd)
+      this.readCommand()
+    },
+    typeCommand(cmd) {
+      this.textAreaTxt = this.directory + cmd
+    },
     readCommand() {
       this.cmd = this.textAreaTxt.match(new RegExp(this.directoryRegex));
 
@@ -339,6 +350,10 @@ export default {
 
       return isDefault;
     }
+  },
+  created() {
+    eventBus.$on('run-command', cmd => this.runCommand(cmd))
+    eventBus.$on('type-command', cmd => this.typeCommand(cmd))
   }
 };
 </script>

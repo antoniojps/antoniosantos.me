@@ -13,8 +13,7 @@
         @click="goFullscreen"
         v-tooltip="{
           content: 'fullscreen',
-          show: showTooltip,
-          trigger: 'manual'
+          show: showTooltip
         }"
       />
       <div class="terminal__top--title">{{title}}</div>

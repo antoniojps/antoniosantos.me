@@ -5,8 +5,17 @@
     <div class="wrapper">
       <div class="terminal__help">
         <h4>Commands</h4>
-        <ul class="font--alternative">
-          <li v-for="cmd in publicCmds" :key="cmd.command">{{cmd.command}}</li>
+        <ul>
+          <li
+            v-for="cmd in publicCmds"
+            :key="cmd.command"
+            @click="runCommand(cmd.command)"
+            @mouseover="typeCommand(cmd.command)"
+            >
+            <AnimUnderline>
+              <span>{{cmd.command}}</span>
+            </AnimUnderline>
+          </li>
         </ul>
       </div>
       <Terminal
@@ -33,13 +42,17 @@
 </template>
 
 <script>
-import Terminal from '@/components/Terminal/Terminal.vue';
-import H from '@/costum/Helpers';
+import H from '@/costum/Helpers'
+import { eventBus } from '@/main'
+
+import Terminal from '@/components/Terminal/Terminal.vue'
+import AnimUnderline from '@/components/Shared/AnimUnderline.vue'
 
 export default {
   name: 'Home',
   components: {
-    Terminal
+    Terminal,
+    AnimUnderline
   },
   data() {
     return {
@@ -94,6 +107,13 @@ export default {
   },
 
   methods: {
+    runCommand(cmd) {
+      eventBus.$emit('run-command', cmd)
+      this.typeCommand(cmd)
+    },
+    typeCommand(cmd) {
+      eventBus.$emit('type-command', cmd)
+    },
     renderDummy(isFullscreen) {
       this.shouldRenderDummy = isFullscreen;
     },
@@ -149,6 +169,9 @@ export default {
   &__help {
     ul {
       list-style-type: none;
+      li{
+        width: fit-content;
+      }
     }
   }
 }

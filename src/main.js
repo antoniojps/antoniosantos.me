@@ -34,6 +34,9 @@ const router = new VueRouter({
   routes
 })
 
+// eslint-disable-next-line
+export const eventBus = new Vue();
+
 new Vue({
   router,
   render: h => h(App)

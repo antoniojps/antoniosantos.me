@@ -11,6 +11,7 @@
             :key="cmd.command"
             @click="runCommand(cmd.command)"
             @mouseover="typeCommand(cmd.command)"
+            @mouseout="typeCommand('')"
             >
             <AnimUnderline>
               <span>{{cmd.command}}</span>

@@ -102,9 +102,12 @@ export default {
     }
   },
   methods: {
-    runCommand(cmd) {
+    unlistenBus() {
       eventBus.$off('run-command')
       eventBus.$off('type-command')
+    },
+    runCommand(cmd) {
+      this.unlistenBus()
       this.typeCommand(cmd)
       this.readCommand()
     },
@@ -112,6 +115,7 @@ export default {
       this.textAreaTxt = this.directory + cmd
     },
     readCommand() {
+      this.unlistenBus()
       this.cmd = this.textAreaTxt.match(new RegExp(this.directoryRegex));
 
       // command is found

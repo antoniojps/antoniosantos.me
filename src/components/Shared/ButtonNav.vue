@@ -7,7 +7,7 @@
       </button>
     </a>
 
-    <router-link :to="link" v-if="(link && !isAbsoluteLink)">
+    <router-link :to="link" v-if="(link && !isAbsoluteLink)" exact>
       <button class="btn btn--small btn--primary btn--icon" :class="classObj">
         <icon v-if="icon" class="btn__icon" :name="icon"></icon>
         {{text}}

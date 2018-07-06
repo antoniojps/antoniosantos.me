@@ -37,7 +37,7 @@
             <li class="nav__container-footer__li" title="Behance">
               <ButtonNav link="/portfolio" icon="brands/behance" />
             </li>
-            <li class="nav__container-footer__li" title="Youtube">
+            <li class="nav__container-footer__li" title="Youtube" @click="anim">
               <ButtonNav link="/portfolio" text="Contact" />
             </li>
           </ul>

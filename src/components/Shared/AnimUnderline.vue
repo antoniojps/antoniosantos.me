@@ -15,11 +15,11 @@ export default {
   methods: {
     animIn() {
       const line = this.$refs.underline
-      TweenLite.to(line, 0.4, { width: '100%' })
+      TweenLite.to(line, 0.4, { width: '100%', ease: Power1.easeOut })
     },
     animOut() {
       const line = this.$refs.underline
-      TweenLite.to(line, 0.4, { width: '0%' })
+      TweenLite.to(line, 0.4, { width: '0%', ease: Power1.easeIn })
     }
   }
 }

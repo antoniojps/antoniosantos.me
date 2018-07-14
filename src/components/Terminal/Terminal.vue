@@ -3,7 +3,6 @@
     <div class="terminal__top">
       <TerminalButton color="#FF6059" />
       <TerminalButton
-        icon="minus"
         color="#FFBD2E"
       />
       <TerminalButton

@@ -5,9 +5,6 @@
         ref="terminalBtn"
         :class="btnStyleClass"
         :style="btnStyle">
-          <div class="terminal__icoBtn--content" v-if="!disabled">
-              <icon :name="icon"></icon>
-          </div>
         </div>
       </div>
 </template>

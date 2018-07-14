@@ -1,8 +1,7 @@
 import Home from './containers/Home.vue';
 
 const routes = [
-  { path: '/', component: Home }
-  //  {path: '*', component: PageNotFound}
+  { path: '*', component: Home }
 ];
 
 export default routes

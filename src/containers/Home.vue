@@ -20,6 +20,7 @@
 
         <div class="terminal__help">
           <ul>
+            <!-- Terminal Commands -->
             <li
               v-for="cmd in publicCmds"
               :key="cmd.command"
@@ -28,6 +29,16 @@
               @mouseout="typeCommand('')"
               >
               <BaseButton :text="cmd.command" />
+            </li>
+            <!-- Links -->
+             <li class="nav__container-footer__li" title="Github">
+              <BaseButton link="https://github.com/antoniojps" icon="brands/github" />
+            </li>
+            <li class="nav__container-footer__li" title="LinkedIn">
+              <BaseButton link="https://www.linkedin.com/in/antonio-pires-dos-santos/" icon="brands/linkedin-in" />
+            </li>
+            <li class="nav__container-footer__li" title="Behance">
+              <BaseButton link="https://www.behance.net/antoniojps" icon="brands/behance" />
             </li>
           </ul>
         </div>
@@ -42,6 +53,7 @@
       />
       <div class="wrapper__btn">
         <BaseButton
+          link="mailto:antoniojmsps@gmail.com"
           text="Contact me"
           btnStyle="gradient"
           size="large" />
@@ -55,14 +67,12 @@ import H from '@/costum/Helpers'
 import { eventBus } from '@/main'
 
 import Terminal from '@/components/Terminal/Terminal.vue'
-import AnimUnderline from '@/components/Shared/AnimUnderline.vue'
 import animData from '@/assets/anim/antonio.json'
 
 export default {
   name: 'Home',
   components: {
     Terminal,
-    AnimUnderline,
   },
   data() {
     return {

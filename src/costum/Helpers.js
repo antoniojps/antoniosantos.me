@@ -1,5 +1,5 @@
 /*
-    Refactoring Helper Class
+    Helper class for the terminal
 */
 
 export default class Helper {

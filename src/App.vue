@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive include="Home">
-      <router-view :key="$route.fullPath" />
-    </keep-alive>
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 

@@ -1,22 +1,14 @@
 <template>
   <BasePage :landingPage="true" >
     <div class="page__top">
+
       <div class="header flex--center">
         <BaseAnim class="anim-logo" :animData="animData" />
       </div>
+
       <div class="description flex--center">
+
         <p>Hi, I’m António! I like creating challenging websites</p>
-        <!-- <ul>
-          <li title="Github">
-            <BaseButton link="https://github.com/antoniojps" icon="brands/github" />
-          </li>
-          <li title="LinkedIn">
-            <BaseButton link="https://www.linkedin.com/in/antonio-pires-dos-santos/" icon="brands/linkedin-in" />
-          </li>
-          <li title="Behance">
-            <BaseButton link="https://www.behance.net/antoniojps" icon="brands/behance" />
-          </li>
-        </ul> -->
 
         <div class="terminal__help">
           <ul>
@@ -42,15 +34,20 @@
             </li>
           </ul>
         </div>
+
       </div>
+
     </div>
+
     <div class="page__bottom">
+
       <Terminal
         :terminalOptions="options"
         :commands="cmds"
         title="type below!"
         directory="antoniosantos.io$"
       />
+
       <div class="wrapper__btn">
         <BaseButton
           link="mailto:antoniojmsps@gmail.com"
@@ -58,7 +55,9 @@
           btnStyle="gradient"
           size="large" />
       </div>
+
     </div>
+
   </BasePage>
 </template>
 

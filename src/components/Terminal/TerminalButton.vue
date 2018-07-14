@@ -1,6 +1,10 @@
 <template>
-     <div class="terminal__icoBtn--wrapper" :class="wrapperStyleClass" @click="handleClick">
-        <div class="terminal__icoBtn" ref="terminalBtn" :class="btnStyleClass" :style="btnStyle">
+     <div class="terminal__icoBtn--wrapper" :class="wrapperStyleClass">
+        <div
+        class="terminal__icoBtn"
+        ref="terminalBtn"
+        :class="btnStyleClass"
+        :style="btnStyle">
           <div class="terminal__icoBtn--content" v-if="!disabled">
               <icon :name="icon"></icon>
           </div>
@@ -41,15 +45,7 @@ export default {
         backgroundColor: this.color
       }
     }
-  },
-  methods: {
-    handleClick() {
-      if (!this.disabled) this.$emit('click');
-    }
   }
 }
 </script>
 
-<style lang="scss">
-    @import "../../assets/scss/styles.scss";
-</style>

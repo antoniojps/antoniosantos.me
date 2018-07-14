@@ -6,7 +6,6 @@
   color:$colorWhite;
   font-family: $font;
   text-transform:uppercase;
-  font-weight:$bold;
   cursor:pointer;
   border: 1px solid rgba($colorWhite,0.2);
   transition: border 0.3s;
@@ -38,11 +37,56 @@
   }
 
   &--small{
-    font-size:$sizeSmall;
-    letter-spacing: 3.5px;
+    font-size:$sizeXSmall;
 
     svg{
       height:$sizeSmall
+    }
+  }
+
+  &--base {
+    color:$colorBase !important;
+    border: 1px solid rgba($colorBase,0.2);
+    &:hover{
+      border: 1px solid rgba($colorBase,1);
+    }
+  }
+
+  &--large{
+    background-color: $colorAzul;
+    border-radius: $radius;
+    color: $colorWhite;
+    text-transform: none;
+    font-size: $sizeXMedium;
+    padding: $sizeXMedium $sizeLarge;
+    border: 0;
+  }
+
+  &--gradient {
+    background: linear-gradient(-45deg, $colorGradient, $colorGradient2, $colorGradient);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+    transition: all 0.3s ease-in;
+
+    &:hover{
+      border: 0px solid rgba($colorBase,1);
+      box-shadow: 0 4px 28px rgba(0, 0, 0, 0.05),
+    0 6px 10px rgba(0, 0, 0, 0.05);
+    }
+
+  }
+
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
     }
   }
 }

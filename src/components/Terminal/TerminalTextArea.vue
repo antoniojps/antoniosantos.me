@@ -40,9 +40,6 @@ export default {
     },
     terminalOptions: {
       type: Object
-    },
-    isFullscreen: {
-      type: Boolean
     }
   },
   data() {
@@ -55,14 +52,11 @@ export default {
       height: 'auto',
       logIndex: this.commandLogs.length - 1,
       logIndexDecreased: false,
-      logIndexIncreased: false
+      logIndexIncreased: false,
     };
   },
   watch: {
     textAreaTxt() {
-      this.fixTxtAreaHeight();
-    },
-    isFullscreen() {
       this.fixTxtAreaHeight();
     }
   },
@@ -234,7 +228,8 @@ export default {
 
     // set height of textarea to avoid scrollbar
     fixTxtAreaHeight() {
-      this.height = this.$refs.txtArea.scrollHeight;
+      const { txtArea } = this.$refs
+      this.height = txtArea.scrollHeight
     },
 
     getRoutesPath() {
@@ -353,11 +348,17 @@ export default {
       else isDefault = false
 
       return isDefault;
-    }
+    },
   },
   created() {
     eventBus.$on('run-command', cmd => this.runCommand(cmd))
     eventBus.$on('type-command', cmd => this.typeCommand(cmd))
+  },
+  mounted() {
+    window.addEventListener('resize', this.fixTxtAreaHeight);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.fixTxtAreaHeight);
   }
 };
 </script>

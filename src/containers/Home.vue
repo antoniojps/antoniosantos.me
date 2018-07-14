@@ -1,45 +1,53 @@
 <template>
-  <div class="row">
-    <h1>Type in the terminal to learn
-      something about me</h1>
-    <div class="wrapper">
-      <div class="terminal__help">
-        <h4>Commands</h4>
-        <ul>
-          <li
-            v-for="cmd in publicCmds"
-            :key="cmd.command"
-            @click="runCommand(cmd.command)"
-            @mouseover="typeCommand(cmd.command)"
-            @mouseout="typeCommand('')"
-            >
-            <AnimUnderline>
-              <span>{{cmd.command}}</span>
-            </AnimUnderline>
-          </li>
-        </ul>
+  <BasePage :landingPage="true" >
+    <div class="page__top">
+      <div class="header flex--center">
+        <BaseAnim class="anim-logo" :animData="animData" />
       </div>
+      <div class="description flex--center">
+        <p>Hi, I’m António! I like creating challenging websites</p>
+        <!-- <ul>
+          <li title="Github">
+            <BaseButton link="https://github.com/antoniojps" icon="brands/github" />
+          </li>
+          <li title="LinkedIn">
+            <BaseButton link="https://www.linkedin.com/in/antonio-pires-dos-santos/" icon="brands/linkedin-in" />
+          </li>
+          <li title="Behance">
+            <BaseButton link="https://www.behance.net/antoniojps" icon="brands/behance" />
+          </li>
+        </ul> -->
+
+        <div class="terminal__help">
+          <ul>
+            <li
+              v-for="cmd in publicCmds"
+              :key="cmd.command"
+              @click="runCommand(cmd.command)"
+              @mouseover="typeCommand(cmd.command)"
+              @mouseout="typeCommand('')"
+              >
+              <BaseButton :text="cmd.command" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page__bottom">
       <Terminal
-        class="marginBottom"
         :terminalOptions="options"
         :commands="cmds"
-        title="antoniosantos -- bash"
+        title="type below!"
         directory="antoniosantos.io$"
-        @is-fullscreen="renderDummy"
-        :newDistanceToTop="dummyPosition"
-        :newSize="dummySize"></Terminal>
-
-      <Terminal
-        ref="dummy"
-        class="paddingBottom invisible"
-        title="antoniosantos -- bash"
-        directory="antoniosantos.io$"
-        :commands="cmds"
-        v-if="shouldRenderDummy"
-        v-show="true"
-        :isDummy="true"></Terminal>
+      />
+      <div class="wrapper__btn">
+        <BaseButton
+          text="Contact me"
+          btnStyle="gradient"
+          size="large" />
+      </div>
     </div>
-  </div>
+  </BasePage>
 </template>
 
 <script>
@@ -48,12 +56,13 @@ import { eventBus } from '@/main'
 
 import Terminal from '@/components/Terminal/Terminal.vue'
 import AnimUnderline from '@/components/Shared/AnimUnderline.vue'
+import animData from '@/assets/anim/antonio.json'
 
 export default {
   name: 'Home',
   components: {
     Terminal,
-    AnimUnderline
+    AnimUnderline,
   },
   data() {
     return {
@@ -90,15 +99,11 @@ export default {
         }
       ],
       options: {
-        routing: true,
+        routing: false,
         emptyLog: true
       },
       party: false,
-      // ANIMATIONS
-      shouldRenderDummy: false,
-      windowSize: window.innerWidth,
-      dummyPosition: {},
-      dummySize: {}
+      animData
     };
   },
   computed: {
@@ -115,24 +120,6 @@ export default {
     typeCommand(cmd) {
       eventBus.$emit('type-command', cmd)
     },
-    renderDummy(isFullscreen) {
-      this.shouldRenderDummy = isFullscreen;
-    },
-    getDummyStyle() {
-      const dummyEl = this.$refs.dummy.$el;
-
-      this.dummyPosition = H.getDistanceToTop(dummyEl);
-      this.dummySize = {
-        width: dummyEl.offsetWidth
-      }
-    },
-    handleWindowResize(event) {
-      this.windowSize = {
-        width: event.currentTarget.innerWidth,
-        height: event.currentTarget.innerHeight
-      };
-      if (this.shouldRenderDummy) this.getDummyStyle();
-    },
     handleParty() {
       this.party = !this.party
       if (this.party) {
@@ -142,39 +129,62 @@ export default {
       this.$confetti.stop()
       return ('thats sad...')
     }
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.handleWindowResize);
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleWindowResize);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/styles.scss";
-.wrapper {
-  display: flex;
-  justify-content: auto;
-  flex-direction: column-reverse;
-
-  @include screen(md) {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-}
-
+@import '../assets/scss/styles.scss';
 .terminal {
+  min-height: 40vh;
   &__help {
+    padding-bottom:$spacingBase;
     ul {
       list-style-type: none;
-      li{
+      display:flex;
+      width:100%;
+      justify-content: center;
+      li {
         width: fit-content;
+        padding: $spacingSmall;
       }
     }
   }
 }
+
+.header {
+  margin:0;
+
+  @include screen(md){
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.page{
+  &__bottom {
+    position:relative;
+  }
+}
+
+.wrapper__btn {
+  display:flex;
+  justify-content:center;
+  position:absolute;
+  top:100%;
+  left: 0;
+  width:100%;
+  background-color:white;
+  padding: $spacingSmall;
+  transform: translateY(-100%);
+
+  div {
+    height:auto;
+    width:auto;
+    transform: translateY(-50%);
+    box-shadow: 0 -10px 10px -5px rgba(0, 0, 0, 0.08)
+  }
+}
+
 </style>
 

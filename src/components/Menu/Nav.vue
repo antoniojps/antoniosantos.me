@@ -47,16 +47,16 @@
         <div class="nav__container-footer">
           <ul>
             <li class="nav__container-footer__li" title="Github">
-              <ButtonNav link="https://github.com/antoniojps" icon="brands/github" />
+              <BaseButton link="https://github.com/antoniojps" icon="brands/github" />
             </li>
             <li class="nav__container-footer__li" title="LinkedIn">
-              <ButtonNav link="https://www.linkedin.com/in/antonio-pires-dos-santos/" icon="brands/linkedin-in" />
+              <BaseButton link="https://www.linkedin.com/in/antonio-pires-dos-santos/" icon="brands/linkedin-in" />
             </li>
             <li class="nav__container-footer__li" title="Behance">
-              <ButtonNav link="https://www.behance.net/antoniojps" icon="brands/behance" />
+              <BaseButton link="https://www.behance.net/antoniojps" icon="brands/behance" />
             </li>
             <li class="nav__container-footer__li">
-              <ButtonNav link="mailto:antoniojmsps@gmail.com" text="Contact" />
+              <BaseButton link="mailto:antoniojmsps@gmail.com" text="Contact" />
             </li>
           </ul>
         </div>
@@ -67,12 +67,8 @@
 
 <script>
 import { TweenMax } from 'gsap';
-import ButtonNav from '@/components/Shared/ButtonNav.vue'
 
 export default {
-  components: {
-    ButtonNav
-  },
   props: {
     msg: String
   },

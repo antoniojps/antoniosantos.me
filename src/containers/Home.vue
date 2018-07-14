@@ -3,27 +3,20 @@
     <div class="page__top">
 
       <div class="header flex--center">
-        <BaseAnim class="anim-logo" :animData="animData" />
+        <BaseAnim
+          v-if="animData"
+          class="anim-logo"
+          :animData="animData" />
       </div>
 
       <div class="description flex--center">
 
-        <p>Hi, I’m António! I like creating challenging websites</p>
+        <p class="align-center ">Hi, I’m António! I like creating challenging websites</p>
 
         <div class="terminal__help">
-          <ul>
-            <!-- Terminal Commands -->
-            <li
-              v-for="cmd in publicCmds"
-              :key="cmd.command"
-              @click="runCommand(cmd.command)"
-              @mouseover="typeCommand(cmd.command)"
-              @mouseout="typeCommand('')"
-              >
-              <BaseButton :text="cmd.command" />
-            </li>
-            <!-- Links -->
-             <li class="nav__container-footer__li" title="Github">
+
+        <ul>
+            <li class="nav__container-footer__li" title="Github">
               <BaseButton link="https://github.com/antoniojps" icon="brands/github" />
             </li>
             <li class="nav__container-footer__li" title="LinkedIn">
@@ -33,6 +26,19 @@
               <BaseButton link="https://www.behance.net/antoniojps" icon="brands/behance" />
             </li>
           </ul>
+
+          <ul>
+            <li
+              v-for="cmd in publicCmds"
+              :key="cmd.command"
+              @click="runCommand(cmd.command)"
+              @mouseover="typeCommand(cmd.command)"
+              @mouseout="typeCommand('')"
+              >
+              <BaseButton :text="cmd.command" />
+            </li>
+          </ul>
+
         </div>
 
       </div>
@@ -64,9 +70,9 @@
 <script>
 import H from '@/costum/Helpers'
 import { eventBus } from '@/main'
+import { getAnimDataAntonio } from '@/costum/requests'
 
 import Terminal from '@/components/Terminal/Terminal.vue'
-import animData from '@/assets/anim/antonio.json'
 
 export default {
   name: 'Home',
@@ -112,7 +118,7 @@ export default {
         emptyLog: true
       },
       party: false,
-      animData
+      animData: false
     };
   },
   computed: {
@@ -120,7 +126,6 @@ export default {
       return H.getPublicCommandsObj(this.cmds)
     }
   },
-
   methods: {
     runCommand(cmd) {
       eventBus.$emit('run-command', cmd)
@@ -138,6 +143,14 @@ export default {
       this.$confetti.stop()
       return ('thats sad...')
     }
+  },
+  async mounted() {
+    try {
+      const { data } = await getAnimDataAntonio()
+      this.animData = data
+    } catch (e) {
+      console.log('Eww I couldnt load the animation...')
+    }
   }
 };
 </script>
@@ -147,12 +160,27 @@ export default {
 .terminal {
   min-height: 40vh;
   &__help {
-    padding-bottom:$spacingBase;
+    padding-bottom:$spacingBase / 1.5;
+    display:flex;
+    flex-direction: column;
+    @include screen(md){
+      flex-direction: row-reverse;
+    }
+
     ul {
       list-style-type: none;
       display:flex;
       width:100%;
-      justify-content: center;
+      justify-content: start;
+      &:first-child{
+        padding-bottom:$spacingSmall;
+      }
+      @include screen(md){
+        justify-content: center;
+        &:first-child{
+          padding-bottom:0;
+        }
+      }
       li {
         width: fit-content;
         padding: $spacingSmall;
@@ -163,7 +191,7 @@ export default {
 
 .header {
   margin:0;
-
+  min-height:121.95px;
   @include screen(md){
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -173,6 +201,10 @@ export default {
 .page{
   &__bottom {
     position:relative;
+    height: auto;
+    @include screen(md){
+      height:60vh;
+    }
   }
 }
 

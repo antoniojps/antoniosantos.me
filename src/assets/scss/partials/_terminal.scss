@@ -81,6 +81,7 @@
     &__container {
         background-color: $colorTerminalBg;
         padding: $spacingLSmall;
+        padding-bottom: 4rem;
         border-bottom-left-radius: $radius;
         border-bottom-right-radius: $radius;
         border: 1px solid $colorTerminalBorder;

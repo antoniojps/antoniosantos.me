@@ -85,12 +85,12 @@ export default {
         {
           command: 'about',
           description: 'my general information',
-          response: 'Name: Antonio santos \nStudying: New Technologies of Communication in Aveiro\nAge:21'
+          response: 'Fresh from college with a degree in IT from the University of Aveiro,I consider myself a driven and creative web developer which enjoys working on ambitious projects that require the latest and best technology.\n\nTo freshen myself up and clear my thoughts I love going for a surf in the beaches of Aveiro and taking some sick pictures and movies. \n\n Type "tech" to know my experience'
         },
         {
-          command: 'hobbies',
-          description: 'my favorite activities',
-          response: 'Web Development\nSurfing\nPhotography\nFilm Making'
+          command: 'tech',
+          description: 'my stack',
+          response: 'I’d consider myself a 2/3 Stack developer, if I’m even allowed to say that. What I enjoy doing the most?\n\nI love building apps with Vue JS, but I also enjoy making some challenging APIs with node and even on the future of APIs, GraphQL, however I’d say my focus is definitely on Frontend development.\n\nEnough of that here’s my stack:\n - HTML5, CSS3, Javascript ES6\n - SASS, css preprocessor\n - Design experience with Sketch app, and a lot of Adobe software (Photoshop, Premiere, After Effects, Lightroom)\n - Used a lot of Bootstrap and jQuery in the past\n - AJAX Requests with promise based libraries (Fetch, Axios, Request)\n - Love Vue JS\n - Like React JS\n - Node JS (npm, web servers with express, modules, restful APIs, CLI tools with Yargs, debugging and testing, ...)\n - GraphQL, client & server with Node and Apollo\n - Basic understanding and experience of MongoDB (Mongoose)\n - Basic knowledge of Webpack and Gulp\n - Experience with Git, version control\n - Some experience deploying web-apps (digital ocean, heroku, netlify)\n - Always up to date with SEO\n - Experience running Docker containers'
         },
         {
           command: 'party',

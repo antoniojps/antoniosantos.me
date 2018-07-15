@@ -109,10 +109,8 @@ export default {
       this.textAreaTxt = this.directory + cmd
     },
     readCommand() {
-      this.unlistenBus()
       this.cmd = this.textAreaTxt.match(new RegExp(this.directoryRegex));
 
-      // command is found
       if (!this.cmd[2]) {
         this.cmd = false;
       } else {
@@ -164,6 +162,7 @@ export default {
             this.fixTxtAreaHeight();
           }
           this.$emit('command-finished');
+          eventBus.$emit('terminal-response')
         })
         .catch(() => {
           if (this.cmd !== 'clear' && this.cmd !== 'cls') {
@@ -265,6 +264,7 @@ export default {
         case 'clear':
         case 'cls': {
           this.$emit('command-clear');
+          eventBus.$emit('terminal-clear');
           defaultCmdFound = true;
           break;
         }

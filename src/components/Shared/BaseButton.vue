@@ -39,6 +39,7 @@ export default {
       type: String,
       default: 'base'
     },
+    disabled: Boolean,
     size: String
   },
   computed: {
@@ -50,7 +51,8 @@ export default {
         'btn--primary': this.btnStyle === 'primary',
         'btn--base': this.btnStyle === 'base',
         'btn--large': this.size === 'large',
-        'btn--gradient': this.btnStyle === 'gradient'
+        'btn--gradient': this.btnStyle === 'gradient',
+        'btn--disabled': this.disabled,
 
       }
     }

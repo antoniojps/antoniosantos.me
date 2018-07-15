@@ -37,6 +37,13 @@
               >
               <BaseButton :text="cmd.command" />
             </li>
+            <li
+              key="clear"
+              @click="showClear && runCommand('clear')"
+              @mouseover="showClear && typeCommand('clear')"
+              @mouseout="showClear && typeCommand('')">
+              <BaseButton :disabled="!showClear" icon="eraser"/>
+            </li>
           </ul>
 
         </div>
@@ -93,11 +100,6 @@ export default {
           response: 'I’d consider myself a 2/3 Stack developer, if I’m even allowed to say that. What I enjoy doing the most?\n\nI love building apps with Vue JS, but I also enjoy making some challenging APIs with node and even on the future of APIs, GraphQL, however I’d say my focus is definitely on Frontend development.\n\nEnough of that here’s my stack:\n - HTML5, CSS3, Javascript ES6\n - SASS, css preprocessor\n - Design experience with Sketch app, and a lot of Adobe software (Photoshop, Premiere, After Effects, Lightroom)\n - Used a lot of Bootstrap and jQuery in the past\n - AJAX Requests with promise based libraries (Fetch, Axios, Request)\n - Love Vue JS\n - Like React JS\n - Node JS (npm, web servers with express, modules, restful APIs, CLI tools with Yargs, debugging and testing, ...)\n - GraphQL, client & server with Node and Apollo\n - Basic understanding and experience of MongoDB (Mongoose)\n - Basic knowledge of Webpack and Gulp\n - Experience with Git, version control\n - Some experience deploying web-apps (digital ocean, heroku, netlify)\n - Always up to date with SEO\n - Experience running Docker containers'
         },
         {
-          command: 'party',
-          description: 'start the partyyyyy or stop',
-          response: this.handleParty
-        },
-        {
           command: 'treasure',
           description: 'hidden',
           hidden: true,
@@ -117,8 +119,8 @@ export default {
         routing: false,
         emptyLog: true
       },
-      party: false,
-      animData: false
+      animData: false,
+      showClear: false
     };
   },
   computed: {
@@ -134,17 +136,14 @@ export default {
     typeCommand(cmd) {
       eventBus.$emit('type-command', cmd)
     },
-    handleParty() {
-      this.party = !this.party
-      if (this.party) {
-        this.$confetti.start()
-        return ('OHHH YEAHHH')
-      }
-      this.$confetti.stop()
-      return ('thats sad...')
+    handleCommand(isClear) {
+      if (!isClear) this.showClear = true
+      else this.showClear = false
     }
   },
   async mounted() {
+    eventBus.$on('terminal-response', this.handleCommand)
+    eventBus.$on('terminal-clear', () => this.handleCommand(true))
     try {
       const { data } = await getAnimDataAntonio()
       this.animData = data

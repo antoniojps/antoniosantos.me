@@ -1,132 +1,131 @@
 .terminal {
-    border-radius: $radius;
-    height:100%;
+  border-radius: $radius;
+  height: 100%;
 
-    &__top {
-        width: 100%;
-        background-color: $colorTerminalTitleBg;
-        border: $borderSize solid $colorBase7;
-        border-top-left-radius: $radius;
-        border-top-right-radius: $radius;
-        display: flex;
-        align-items: center;
-        &--title {
-            padding: $spacingLSmall;
-            font-size: $sizeXSmall;
-            @include screen(md) {
-                padding-left: $spacingLarge;
-            }
-        }
+  &__top {
+    width: 100%;
+    background-color: $colorTerminalTitleBg;
+    border: $borderSize solid $colorBase7;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    display: flex;
+    align-items: center;
+    &--title {
+      padding: $spacingLSmall;
+      font-size: $sizeXSmall;
+      @include screen(md) {
+        padding-left: $spacingLarge;
+      }
     }
-    &__icoBtn {
-        &--wrapper{
-            padding: {
-                top:$spacingSmall;
-                left: $spacingXSmall;
-                right: $spacingXSmall;
-                bottom: $spacingSmall;
-            }
-            &:first-child{
-                padding:{
-                    left: $spacingXLSmall
-                };
-            }
-            &--disabled{
-                cursor:default;
-            }
-
-            &:hover .terminal__icoBtn--content{
-                opacity:0.5;
-            }
+  }
+  &__icoBtn {
+    &--wrapper {
+      padding: {
+        top: $spacingSmall;
+        left: $spacingXSmall;
+        right: $spacingXSmall;
+        bottom: $spacingSmall;
+      }
+      &:first-child {
+        padding: {
+          left: $spacingXLSmall;
         }
+      }
+      &--disabled {
+        cursor: default;
+      }
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: $sizeSmall;
-        height: $sizeSmall;
-        border-radius: 50%;
-
-        &--content{
-            color: $colorBase;
-            opacity: 0;
-            padding-bottom: $spacingXSmall/1.5;
-
-            .fa-icon {
-                width: auto;
-                height: 10px;
-
-                max-width: 100%;
-                max-height: 100%;
-            }
-        }
-
-        &--red {
-            background-color: $colorVermelho;
-        }
-        &--yellow {
-            background-color: $colorAmarelo;
-
-        }
-        &--green {
-            background-color: $colorVerde;
-        }
-        &--active{
-            border:$borderSize solid $colorBase6;
-        }
-        &--disabled{
-            opacity:0.8;
-        }
+      &:hover .terminal__icoBtn--content {
+        opacity: 0.5;
+      }
     }
-    &__container {
-        background-color: $colorTerminalBg;
-        padding: $spacingLSmall;
-        padding-bottom: 4rem;
-        border-bottom-left-radius: $radius;
-        border-bottom-right-radius: $radius;
-        border: 1px solid $colorTerminalBorder;
-        border-top-width: 0;
-        min-height: 100px;
-        height:80%;
-        overflow-y: auto;
-        color: $colorBase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $sizeSmall;
+    height: $sizeSmall;
+    border-radius: 50%;
+
+    &--content {
+      color: $colorBase;
+      opacity: 0;
+      padding-bottom: $spacingXSmall/1.5;
+
+      .fa-icon {
+        width: auto;
+        height: 10px;
+
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    &--red {
+      background-color: $colorVermelho;
+    }
+    &--yellow {
+      background-color: $colorAmarelo;
+    }
+    &--green {
+      background-color: $colorVerde;
+    }
+    &--active {
+      border: $borderSize solid $colorBase6;
+    }
+    &--disabled {
+      opacity: 0.8;
+    }
+  }
+  &__container {
+    background-color: $colorTerminalBg;
+    padding: $spacingLSmall;
+    padding-bottom: 4rem;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+    border: 1px solid $colorTerminalBorder;
+    border-top-width: 0;
+    min-height: 100px;
+    height: 80%;
+    overflow-y: auto;
+    color: $colorBase;
+    font: {
+      family: $fontAlternative;
+      size: $sizeBase;
+    }
+    @include screen(md) {
+      padding: $spacingBase;
+    }
+  }
+  &__textarea {
+    position: relative;
+    textarea {
+      resize: none;
+      width: 100%;
+      height: 100%;
+      word-wrap: break-word;
+      background-color: transparent;
+      border: 0;
+      color: $colorBase4;
+      -webkit-text-fill-color: $colorBase4;
+      caret-color: $colorVerde;
+      font-family: $fontAlternative;
+      &:active,
+      &:hover,
+      &:focus {
+        border: 0;
+        outline: 0;
+      }
+      font: {
+        family: $fontAlternative;
+        size: $sizeSmall;
+      }
+
+      @include screen(md) {
         font: {
-            family: $fontAlternative;
-            size: $sizeBase;
+          size: $sizeXMedium;
         }
-        @include screen(md){
-            padding: $spacingBase;
-        }
+      }
     }
-    &__textarea {
-        position: relative;
-        textarea {
-            resize: none;
-            width: 100%;
-            height: 100%;
-            word-wrap: break-word;
-            background-color: transparent;
-            border: 0;
-            color: $colorBase4;
-            caret-color:$colorVerde;
-            font-family: $fontAlternative;
-            &:active,
-            &:hover,
-            &:focus {
-                border: 0;
-                outline: 0;
-            }
-            font: {
-                family: $fontAlternative;
-                size: $sizeSmall;
-            }
-
-            @include screen(md){
-                font: {
-                    size: $sizeXMedium;
-                }
-            }
-        }
-
-    }
+  }
 }

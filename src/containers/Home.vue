@@ -117,6 +117,12 @@ export default {
           response: () => ('you are rich')
         },
         {
+          command: 'rafaela',
+          description: 'hidden',
+          hidden: true,
+          response: 'deveras bonita, talvez menos que António mas qui sá'
+        },
+        {
           command: 'flip',
           description: 'hidden',
           hidden: true,

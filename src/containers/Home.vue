@@ -248,6 +248,9 @@ export default {
   width: 100%;
   background-color: white;
   padding: $spacingSmall;
+  @include screen(md) {
+      transform: translateY(-200%)
+    }
   transform: translateY(-100%);
 
   div {

@@ -80,7 +80,7 @@
   &__container {
     background-color: $colorTerminalBg;
     padding: $spacingLSmall;
-    padding-bottom: 4rem;
+    padding-bottom: 7rem;
     border-bottom-left-radius: $radius;
     border-bottom-right-radius: $radius;
     border: 1px solid $colorTerminalBorder;
@@ -95,6 +95,7 @@
     }
     @include screen(md) {
       padding: $spacingBase;
+      padding-bottom: 6rem;
     }
   }
   &__textarea {

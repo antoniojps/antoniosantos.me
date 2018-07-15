@@ -16,7 +16,7 @@ export default {
     const animation = lottie.loadAnimation({
       container: this.$refs.elAnim,
       renderer: 'svg',
-      loop: true,
+      loop: false,
       autoplay: false,
       animationData: this.animData
     })

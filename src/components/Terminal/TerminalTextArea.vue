@@ -109,6 +109,7 @@ export default {
       this.textAreaTxt = this.directory + cmd
     },
     readCommand() {
+      this.unlistenBus()
       this.cmd = this.textAreaTxt.match(new RegExp(this.directoryRegex));
 
       if (!this.cmd[2]) {

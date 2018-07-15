@@ -3,3 +3,23 @@
     width:278px;
   }
 }
+
+.fade{
+  &-enter{
+    opacity: 0;
+    &-active{
+      transition: opacity 0.4s;
+    }
+  }
+  &-leave{
+    opacity:1;
+    &-active{
+      transition: opacity 0.4s;
+      opacity:0;
+    }
+  }
+
+  &-move{
+    transition: translate 0.4s;
+  }
+}

@@ -10,18 +10,30 @@ export default {
     animData: {
       required: true,
       type: Object
+    },
+    autoplay: {
+      default: false,
+      type: Boolean
+    },
+    loop: {
+      default: false,
+      type: Boolean
+    },
+    speed: {
+      default: 1,
+      type: Number
     }
   },
   mounted() {
     const animation = lottie.loadAnimation({
       container: this.$refs.elAnim,
       renderer: 'svg',
-      loop: false,
-      autoplay: false,
+      loop: this.loop,
+      autoplay: this.autoplay,
       animationData: this.animData
     })
 
-    animation.setSpeed(4);
+    animation.setSpeed(this.speed);
     animation.play();
   }
 }

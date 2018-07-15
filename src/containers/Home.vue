@@ -106,7 +106,7 @@ export default {
         {
           command: 'about',
           description: 'my general information',
-          response: 'Fresh from college with a degree in IT from the University of Aveiro,I consider myself a driven and creative web developer which enjoys working on ambitious projects that require the latest and best technology.\n\nTo freshen myself up and clear my thoughts I love going for a surf in the beaches of Aveiro and taking some sick pictures and movies. \n\n Type "tech" to know my experience'
+          response: 'Fresh from college with a degree in IT from the University of Aveiro,I consider myself a driven and creative web developer which enjoys working on ambitious projects that require the latest and best technology.\n\nTo freshen myself up and clear my thoughts I love going for a surf and taking some sick pictures and movies. \n\n Type "tech" to know my experience'
         },
         {
           command: 'tech',

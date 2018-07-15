@@ -67,7 +67,7 @@
             :terminalOptions="options"
             :commands="cmds"
             title="type below!"
-            directory="antoniosantos.io$"
+            directory="antoniosantos.me$"
           />
 
           <div class="wrapper__btn">
@@ -111,10 +111,9 @@ export default {
           response: ' - HTML5, CSS3, Javascript ES6\n - SASS, css preprocessor\n - Design experience with Sketch app, and a lot of Adobe software (Photoshop, Premiere, After Effects, Lightroom)\n - Used a lot of Bootstrap and jQuery in the past\n - AJAX Requests with promise based libraries (Fetch, Axios, Request)\n - Love Vue JS\n - Like React JS\n - Node JS (npm, web servers with Express, modules, restful APIs, CLI tools with Yargs)\n - Experience in the past with PHP\n - GraphQL, client & server with Node and Apollo\n - Basic understanding and experience of MongoDB (Mongoose)\n - Basic knowledge of Webpack and Gulp\n - Experience with Git, version control\n - Some experience deploying web-apps (digital ocean, heroku, netlify)\n - Always up to date with SEO\n - Experience running Docker containers\n ...more soon, one must keep learning!'
         },
         {
-          command: 'treasure',
-          description: 'hidden',
-          hidden: true,
-          response: () => ('you are rich')
+          command: 'email',
+          description: 'my email',
+          response: 'antoniojmsps@gmail.com'
         },
         {
           command: 'rafaela',

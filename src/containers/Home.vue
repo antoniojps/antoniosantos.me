@@ -36,7 +36,7 @@
                 <li class="nav__container-footer__li" title="Behance">
                   <BaseButton link="https://www.behance.net/antoniojps" icon="brands/behance" />
                 </li>
-                <li class="nav__container-footer__li" title="LinkedIn">
+                <li class="nav__container-footer__li" title="Youtube">
                   <BaseButton link="https://www.youtube.com/user/AntonioSantosYT" icon="brands/youtube" />
                 </li>
               </ul>

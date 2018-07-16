@@ -20,7 +20,9 @@
 
           <div class="description flex--center">
 
-            <p class="align-center ">Hi, I’m António! I like creating challenging websites</p>
+            <p class="align-center ">
+              Hi, I’m António Santos! I like creating challenging websites
+            </p>
 
             <div class="terminal__help">
 
@@ -256,9 +258,6 @@ export default {
   width: 100%;
   background-color: white;
   padding: $spacingSmall;
-  @include screen(md) {
-      transform: translateY(-200%)
-    }
   transform: translateY(-100%);
 
   div {

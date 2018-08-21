@@ -124,7 +124,7 @@ export default {
           command: 'rafaela',
           description: 'hidden',
           hidden: true,
-          response: 'deveras bonita, talvez menos que António mas qui sá'
+          response: 'Muitos parabéns à senhora mais bonita!'
         },
         {
           command: 'flip',

@@ -121,6 +121,11 @@ export default {
           response: 'antoniojmsps@gmail.com'
         },
         {
+          command: 'gregonia',
+          description: '',
+          response: 'Gregonia is the Sonia'
+        },
+        {
           command: 'rafaela',
           description: 'hidden',
           hidden: true,

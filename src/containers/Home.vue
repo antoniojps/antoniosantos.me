@@ -123,6 +123,7 @@ export default {
         {
           command: 'gregonia',
           description: '',
+          hidden: true,
           response: 'Gregonia is the Sonia'
         },
         {

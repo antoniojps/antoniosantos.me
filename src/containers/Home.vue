@@ -27,6 +27,9 @@
             <div class="terminal__help">
 
             <ul>
+                <li class="nav__container-footer__li" title="Twitter">
+                  <BaseButton link="https://twitter.com/antoniojmps" icon="brands/twitter" />
+                </li>
                 <li class="nav__container-footer__li" title="Github">
                   <BaseButton link="https://github.com/antoniojps" icon="brands/github" />
                 </li>
@@ -113,7 +116,7 @@ export default {
         {
           command: 'tech',
           description: 'my stack',
-          response: ' - HTML5, CSS3, Javascript ES6\n - SASS, css preprocessor\n - Design experience with Sketch app, and a lot of Adobe software (Photoshop, Premiere, After Effects, Lightroom)\n - Used a lot of Bootstrap and jQuery in the past\n - AJAX Requests with promise based libraries (Fetch, Axios, Request)\n - Love Vue JS\n - Like React JS\n - Node JS (npm, web servers with Express, modules, restful APIs, CLI tools with Yargs)\n - Experience in the past with PHP\n - GraphQL, client & server with Node and Apollo\n - Basic understanding and experience of MongoDB (Mongoose)\n - Basic knowledge of Webpack and Gulp\n - Experience with Git, version control\n - Some experience deploying web-apps (digital ocean, heroku, netlify)\n - Always up to date with SEO\n - Experience running Docker containers\n ...more soon, one must keep learning!'
+          response: ' - HTML5, CSS3, Javascript\n - Love Vue JS\n - Love React JS\n - Node JS (npm, web servers with Express, modules, restful APIs, CLI tools with Yargs)\n - SASS, Styled Components\n - Design experience with Sketch app, and a lot of Adobe software (Photoshop, Premiere, After Effects, Lightroom)\n - AJAX Requests with promise based libraries (Fetch, Axios, Request)\n - GraphQL, client & server with Node and Apollo\n - Basic understanding and experience of MongoDB (Mongoose)\n - Basic knowledge of Webpack and Gulp\n - Experience with Git, version control\n - Some experience deploying web-apps (digital ocean, heroku, netlify, now cli)\n - Always up to date with SEO\n - Experience running Docker containers\n - Used a lot of Bootstrap and jQuery in the past\n - Experience in the past with PHP\n ...more soon, one must keep learning!'
         },
         {
           command: 'email',
@@ -121,16 +124,10 @@ export default {
           response: 'antoniojmsps@gmail.com'
         },
         {
-          command: 'gregonia',
-          description: '',
-          hidden: true,
-          response: 'Gregonia is the Sonia'
-        },
-        {
           command: 'rafaela',
           description: 'hidden',
           hidden: true,
-          response: 'Muitos parabéns à senhora mais bonita!'
+          response: 'Mt linda e bonita'
         },
         {
           command: 'flip',

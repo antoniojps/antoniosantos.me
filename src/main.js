@@ -8,6 +8,7 @@ import 'vue-awesome/icons/brands/linkedin-in'
 import 'vue-awesome/icons/brands/behance'
 import 'vue-awesome/icons/brands/youtube'
 import 'vue-awesome/icons/eraser'
+import 'vue-awesome/icons/brands/twitter'
 
 import App from './App.vue'
 import routes from './routes'

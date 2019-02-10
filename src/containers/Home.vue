@@ -1,13 +1,25 @@
 <template>
   <BasePage :landingPage="true">
-    <transition name="fade" type="transition" mode="out-in">
-      <div v-if="loading" key="loading" class="loading">
+    <transition
+      name="fade"
+      type="transition"
+      mode="out-in"
+    >
+      <div
+        v-if="loading"
+        key="loading"
+        class="loading"
+      >
         <BaseAnim
           class="anim-logo"
           :loop="true"
-          :animData="animDataLoading" />
+          :animData="animDataLoading"
+        />
       </div>
-      <div key="page" v-else>
+      <div
+        key="page"
+        v-else
+      >
         <div class="page__top">
 
           <div class="header flex--center">
@@ -15,7 +27,8 @@
               v-if="animData"
               class="anim-logo"
               :animData="animData"
-              :speed="4" />
+              :speed="4"
+            />
           </div>
 
           <div class="description flex--center">
@@ -26,21 +39,51 @@
 
             <div class="terminal__help">
 
-            <ul>
-                <li class="nav__container-footer__li" title="Twitter">
-                  <BaseButton link="https://twitter.com/antoniojmps" icon="brands/twitter" />
+              <ul>
+                <li
+                  class="nav__container-footer__li"
+                  title="Twitter"
+                >
+                  <BaseButton
+                    link="https://twitter.com/antoniojmps"
+                    icon="brands/twitter"
+                  />
                 </li>
-                <li class="nav__container-footer__li" title="Github">
-                  <BaseButton link="https://github.com/antoniojps" icon="brands/github" />
+                <li
+                  class="nav__container-footer__li"
+                  title="Github"
+                >
+                  <BaseButton
+                    link="https://github.com/antoniojps"
+                    icon="brands/github"
+                  />
                 </li>
-                <li class="nav__container-footer__li" title="LinkedIn">
-                  <BaseButton link="https://www.linkedin.com/in/antonio-pires-dos-santos/" icon="brands/linkedin-in" />
+                <li
+                  class="nav__container-footer__li"
+                  title="LinkedIn"
+                >
+                  <BaseButton
+                    link="https://www.linkedin.com/in/antonio-pires-dos-santos/"
+                    icon="brands/linkedin-in"
+                  />
                 </li>
-                <li class="nav__container-footer__li" title="Behance">
-                  <BaseButton link="https://www.behance.net/antoniojps" icon="brands/behance" />
+                <li
+                  class="nav__container-footer__li"
+                  title="Behance"
+                >
+                  <BaseButton
+                    link="https://www.behance.net/antoniojps"
+                    icon="brands/behance"
+                  />
                 </li>
-                <li class="nav__container-footer__li" title="Youtube">
-                  <BaseButton link="https://www.youtube.com/user/AntonioSantosYT" icon="brands/youtube" />
+                <li
+                  class="nav__container-footer__li"
+                  title="Youtube"
+                >
+                  <BaseButton
+                    link="https://www.youtube.com/user/AntonioSantosYT"
+                    icon="brands/youtube"
+                  />
                 </li>
               </ul>
 
@@ -51,15 +94,19 @@
                   @click="runCommand(cmd.command)"
                   @mouseover="typeCommand(cmd.command)"
                   @mouseout="typeCommand('')"
-                  >
+                >
                   <BaseButton :text="cmd.command" />
                 </li>
                 <li
                   key="clear"
                   @click="showClear && runCommand('clear')"
                   @mouseover="showClear && typeCommand('clear')"
-                  @mouseout="showClear && typeCommand('')">
-                  <BaseButton :disabled="!showClear" icon="eraser"/>
+                  @mouseout="showClear && typeCommand('')"
+                >
+                  <BaseButton
+                    :disabled="!showClear"
+                    icon="eraser"
+                  />
                 </li>
               </ul>
 
@@ -83,7 +130,8 @@
               link="mailto:antoniojmsps@gmail.com"
               text="Contact me"
               btnStyle="gradient"
-              size="large" />
+              size="large"
+            />
           </div>
 
         </div>
@@ -128,6 +176,12 @@ export default {
           description: 'hidden',
           hidden: true,
           response: 'Mt linda e bonita'
+        },
+        {
+          command: 'henrique',
+          description: 'hidden',
+          hidden: true,
+          response: 'O Penicheiro'
         },
         {
           command: 'flip',
@@ -191,7 +245,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/styles.scss';
+@import "../assets/scss/styles.scss";
 
 .terminal {
   min-height: 40vh;

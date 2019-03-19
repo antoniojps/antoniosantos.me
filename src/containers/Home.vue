@@ -184,6 +184,18 @@ export default {
           response: 'O Penicheiro'
         },
         {
+          command: 'ua',
+          description: 'hidden',
+          hidden: true,
+          response: 'UA Labs > Altice Labs'
+        },
+        {
+          command: 'pai',
+          description: 'hidden',
+          hidden: true,
+          response: 'Feliz dia do pai senhor Henrique Santos!'
+        },
+        {
           command: 'flip',
           description: 'hidden',
           hidden: true,

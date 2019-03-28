@@ -196,6 +196,45 @@ export default {
           response: 'Feliz dia do pai senhor Henrique Santos!'
         },
         {
+          command: 'gucci',
+          description: 'hidden',
+          hidden: true,
+          response: 'trash'
+        },
+        {
+          command: 'sonia',
+          description: 'hidden',
+          hidden: true,
+          response: () => {
+            if (Math.random() > 0.5) return 'gregonia';
+            return 'tetonia';
+          }
+        },
+        {
+          command: 'regalado',
+          description: 'hidden',
+          hidden: true,
+          response: 'trash',
+        },
+        {
+          command: 'kind',
+          description: 'hidden',
+          hidden: true,
+          response: 'Please be kind, dont insult, be happy, you are trash',
+        },
+        {
+          command: 'henrique',
+          description: 'hidden',
+          hidden: true,
+          response: 'fraco',
+        },
+        {
+          command: 'piada',
+          description: 'hidden',
+          hidden: true,
+          response: 'Era uma x um homem que decidiu comprar um rádio. Foi a uma loja de eletrodomesticos e havia um rádio que tocava tudo o que se pedia. Comprou o rádio, mas quando estava a sair da loja deixou-o o cair e disse "Ca granda merda!!" e começou a tocar: "SLB! SLB!!! GLORIOSO..."',
+        },
+        {
           command: 'flip',
           description: 'hidden',
           hidden: true,

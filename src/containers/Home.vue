@@ -250,7 +250,13 @@ export default {
           command: 'henrique',
           description: 'hidden',
           hidden: true,
-          response: 'fraco',
+          response: '2/2 hackathons won, updated at 28-03-2019',
+        },
+        {
+          command: 'vasco',
+          description: 'hidden',
+          hidden: true,
+          response: 'que foleirada',
         },
         {
           command: 'piada',

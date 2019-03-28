@@ -178,10 +178,10 @@ export default {
           response: 'Mt linda e bonita'
         },
         {
-          command: 'henrique',
+          command: 'bruno',
           description: 'hidden',
           hidden: true,
-          response: 'O Penicheiro'
+          response: 'aqui nao ha gajas, podes ir embora'
         },
         {
           command: 'ua',
@@ -211,6 +211,30 @@ export default {
           }
         },
         {
+          command: 'vitor',
+          description: 'hidden',
+          hidden: true,
+          response: 'pisga-te...'
+        },
+        {
+          command: 'flavio',
+          description: 'hidden',
+          hidden: true,
+          response: '*silencio*'
+        },
+        {
+          command: 'ines',
+          description: 'hidden',
+          hidden: true,
+          response: 'martelos'
+        },
+        {
+          command: 'mariana',
+          description: 'hidden',
+          hidden: true,
+          response: 'sobrancelhas'
+        },
+        {
           command: 'regalado',
           description: 'hidden',
           hidden: true,
@@ -233,6 +257,12 @@ export default {
           description: 'hidden',
           hidden: true,
           response: 'Era uma x um homem que decidiu comprar um rádio. Foi a uma loja de eletrodomesticos e havia um rádio que tocava tudo o que se pedia. Comprou o rádio, mas quando estava a sair da loja deixou-o o cair e disse "Ca granda merda!!" e começou a tocar: "SLB! SLB!!! GLORIOSO..."',
+        },
+        {
+          command: 'telemoveis',
+          description: 'hidden',
+          hidden: true,
+          response: 'eu parti o telemovel, ai meu deus, a ligar para la para cima, partiu partiu...'
         },
         {
           command: 'flip',

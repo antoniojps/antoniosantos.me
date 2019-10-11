@@ -173,7 +173,7 @@ export default {
         },
         {
           command: 'cv',
-          description: 'Download my Curriculum Vitae',
+          description: 'download my curriculum vitae',
           response: () => {
             downloadCv()
             return 'Downloading Curriculum Vitae...'

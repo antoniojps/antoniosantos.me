@@ -143,7 +143,7 @@
 <script>
 import H from '@/costum/Helpers'
 import { eventBus } from '@/main'
-import { getAnimDataAntonio } from '@/costum/requests'
+import { getAnimDataAntonio, downloadCv } from '@/costum/requests'
 import Terminal from '@/components/Terminal/Terminal.vue'
 
 const animDataLoading = require('@/assets/anim/anim-loading.json')
@@ -170,6 +170,14 @@ export default {
           command: 'email',
           description: 'my email',
           response: 'antoniojmsps@gmail.com'
+        },
+        {
+          command: 'cv',
+          description: 'Download my Curriculum Vitae',
+          response: () => {
+            downloadCv()
+            return 'Downloading Curriculum Vitae...'
+          }
         },
         {
           command: 'rafaela',

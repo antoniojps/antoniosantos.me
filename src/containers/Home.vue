@@ -143,7 +143,7 @@
 <script>
 import H from '@/costum/Helpers'
 import { eventBus } from '@/main'
-import { getAnimDataAntonio, downloadCv } from '@/costum/requests'
+import { getAnimDataAntonio, openCv } from '@/costum/requests'
 import Terminal from '@/components/Terminal/Terminal.vue'
 
 const animDataLoading = require('@/assets/anim/anim-loading.json')
@@ -173,10 +173,10 @@ export default {
         },
         {
           command: 'cv',
-          description: 'download my curriculum vitae',
+          description: 'View my curriculum vitae',
           response: () => {
-            downloadCv()
-            return 'Downloading Curriculum Vitae...'
+            openCv()
+            return 'Opened Curriculum Vitae in new tab'
           }
         },
         {
@@ -355,12 +355,14 @@ export default {
     ul {
       list-style-type: none;
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
       justify-content: start;
       &:first-child {
         padding-bottom: $spacingSmall;
       }
       @include screen(md) {
+        flex-wrap: initial;
         justify-content: center;
         &:first-child {
           padding-bottom: 0;

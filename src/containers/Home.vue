@@ -159,12 +159,12 @@ export default {
         {
           command: 'about',
           description: 'my general information',
-          response: 'Fresh from college with a degree in IT from the University of Aveiro,I consider myself a driven and creative web developer which enjoys working on ambitious projects that require the latest and best technology.\n\nTo freshen myself up and clear my thoughts I love going for a surf and taking some sick pictures and movies. \n\n Type "tech" to know my experience'
+          response: 'With a degree in IT from the University of Aveiro,I consider myself a driven and creative web developer which enjoys working on ambitious projects that require the latest and best technology.\n\nTo freshen myself up and clear my thoughts I love going for a surf and taking some sick pictures and movies. \n\n Type "tech" to know my experience'
         },
         {
           command: 'tech',
           description: 'my stack',
-          response: ' - HTML5, CSS3, Javascript\n - Love Vue JS\n - Love React JS\n - Node JS (npm, web servers with Express, modules, restful APIs, CLI tools with Yargs)\n - SASS, Styled Components\n - Design experience with Sketch app, and a lot of Adobe software (Photoshop, Premiere, After Effects, Lightroom)\n - AJAX Requests with promise based libraries (Fetch, Axios, Request)\n - GraphQL, client & server with Node and Apollo\n - Basic understanding and experience of MongoDB (Mongoose)\n - Basic knowledge of Webpack and Gulp\n - Experience with Git, version control\n - Some experience deploying web-apps (digital ocean, heroku, netlify, now cli)\n - Always up to date with SEO\n - Experience running Docker containers\n - Used a lot of Bootstrap and jQuery in the past\n - Experience in the past with PHP\n ...more soon, one must keep learning!'
+          response: ' - HTML5, CSS3, Javascript (TypeScript)\n - Love React JS - Experience with SPAs, Next.js and Gatsby\n - Node JS (npm, web servers with Express, modules, restful APIs, CLI tools with Yargs)\n - GraphQL, client & server with Node and Apollo\n - AJAX Requests with promise based libraries (Fetch, Axios, Request, react-query)\n - SASS, Styled Components, styled-jsx\n - Basic understanding and experience of MongoDB (Mongoose)\n - Basic knowledge of Babel, Webpack and Rollup\n - Experience with Git, version control\n - Experience deploying web-apps (digital ocean, heroku, netlify, vercel)\n - Experience with monorepos, with yarn workspaces, lerna and nrwl/nx.\n - Experience with Electronjs building desktop apps\n - Design experience with Sketch app, and a lot of Adobe software (Photoshop, Premiere, After Effects, Lightroom)\n - Always up to date with SEO\n - Used a lot of Bootstrap and jQuery in the past\n - Experience in the past with PHP\n ...more soon, one must keep learning!'
         },
         {
           command: 'email',
@@ -286,6 +286,12 @@ export default {
             if (Math.random() > 0.5) return 'cara';
             return 'croa';
           }
+        },
+        {
+          command: 'swell',
+          description: 'hidden',
+          hidden: true,
+          response: 'lindinho 🐶'
         }
       ],
       options: {

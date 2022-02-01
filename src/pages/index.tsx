@@ -1,15 +1,9 @@
 import type { NextPage } from 'next'
+import { HomeView } from '../views'
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <main>
-        <h1>Hello</h1>
-      </main>
-      <footer>
-        footer
-      </footer>
-    </div>
+    <HomeView />
   )
 }
 

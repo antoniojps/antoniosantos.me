@@ -1,5 +1,5 @@
-import { AppProps } from 'next/app'
-import { Theme } from '../containers'
+import { AppProps } from "next/app";
+import { Theme } from "../containers";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -7,5 +7,5 @@ export default function App({ Component, pageProps }: AppProps) {
       <Theme />
       <Component {...pageProps} />
     </>
-  )
+  );
 }

@@ -18,11 +18,11 @@ export const Container = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  padding-top: 153px;
+  padding-top: 100px;
   max-width: 918px;
   min-height: 100vh;
   margin-left: auto;
-  margin-right: auto;x1
+  margin-right: auto;
   grid-template-rows: 1fr auto;
 `;
 
@@ -54,6 +54,9 @@ export const Article = styled.article`
 export const WrittenContent = styled.div`
   width: calc(100% - 119px);
   margin-left: auto;
+  > * {
+    max-width: 681px;
+  }
 `;
 
 export const Header = styled.header``;

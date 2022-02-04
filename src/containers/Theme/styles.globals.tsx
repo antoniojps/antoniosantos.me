@@ -26,16 +26,14 @@ export const CssVariables = createGlobalStyle`
     --selection: #fffb79;
 
     /* Spacing */
-    --space: 4px;
-    --space-1x: 6px;
-    --space-2x: 8px;
-    --space-3x: 10px;
-    --space-4x: 14px;
-    --space-5x: 16px;
-    --space-6x: 25px;
-    --space-8x: 32px;
-    --space-16x: 64px;
-    --space-32x: 128px;
+    --space-1: 4px;
+    --space-2: 6px;
+    --space-3: 8px;
+    --space-4: 12px;
+    --space-5: 16px;
+    --space-6: 20px;
+    --space-7: 24px;
+    --space-8: 32px;
 
     /* font-size */
     --size-base: 1rem; // 16px
@@ -122,7 +120,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 0.875rem;
   }
   b {
-    font-weight: 600;
+    font-weight: var(--weight-bold);
+    background-color: #F3FF00;
+    padding: 0 4px;
+    border-radius: var(--radius);
   }
   span {
     font-size: inherit;

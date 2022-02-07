@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { space, SpaceProps } from "styled-system";
 
 export const AvatarContainer = styled.div`
   width: 30px;
@@ -7,8 +8,8 @@ export const AvatarContainer = styled.div`
   margin-right: 12px;
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled.div<SpaceProps>`
   display: flex;
   align-items: center;
-  margin-bottom: var(--space-7);
+  ${space};
 `;

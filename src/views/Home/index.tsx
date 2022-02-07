@@ -8,20 +8,22 @@ import {
   Aside,
   Header,
   Nav,
-  Footer,
+  FooterWrapper,
 } from "./styles";
-import { Logo } from "../../components";
+import { ContentGrid, Footer, Logo, SideNav } from "../../components";
 
 export const HomeView = () => {
   return (
     <Container>
       <Grid>
         <Main>
-          <Nav>Nav</Nav>
+          <Nav>
+            <SideNav />
+          </Nav>
           <Article>
             <Header>
               <WrittenContent>
-                <Logo />
+                <Logo marginBottom="var(--space-7)" />
                 <h1>I&apos;m Antonio, a software developer</h1>
                 <p>Hello! Thanks for taking interest in me and my profile.</p>
                 <p>
@@ -39,19 +41,24 @@ export const HomeView = () => {
                 </p>
               </WrittenContent>
             </Header>
-            <Aside>Aside</Aside>
+            <Aside>
+              <ContentGrid />
+            </Aside>
             <WrittenContent>
               <h2>Technology</h2>
               <p>
                 My passion is in the frontend, eventhough I have experience with backend for
-                personal projects. I have solid fundamentals in HTML, CSS and have made Javascript
+                personal projects. I have solid fundamentals in HTML, CSS and have made{" "}
+                <b>Javascript</b>
                 my main focus for the past 4 years. I like building challenging interfaces mainly
-                with React and have experience with Vue.
+                with <b>React</b> and have experience with Vue.
               </p>
             </WrittenContent>
           </Article>
         </Main>
-        <Footer>footer</Footer>
+        <FooterWrapper>
+          <Footer />
+        </FooterWrapper>
       </Grid>
     </Container>
   );

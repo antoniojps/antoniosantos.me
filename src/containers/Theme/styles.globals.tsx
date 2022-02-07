@@ -1,3 +1,4 @@
+import { below } from "@/utils";
 import { createGlobalStyle } from "styled-components";
 
 export const CssVariables = createGlobalStyle`
@@ -11,6 +12,7 @@ export const CssVariables = createGlobalStyle`
     --base-inverse: #fff;
     --foreground: #000;
     --background: #fff;
+    --background-2: #F6F6F6;
     --accents-1: #fafafa;
     --accents-2: #eaeaea;
     --accents-3: #999;
@@ -113,6 +115,9 @@ export const GlobalStyle = createGlobalStyle`
     margin: var(--space-4x) 0;
     font-size: var(--size-xl2);
     line-height: 1.625em;
+    ${below.sm`
+      font-size: var(--size-base);
+    `}
   }
   small {
     margin: 0;
@@ -182,21 +187,34 @@ export const GlobalStyle = createGlobalStyle`
     letter-spacing: -0.066875rem;
     line-height: 1.5;
     font-weight: 700;
+
+    ${below.sm`
+      font-size: var(--size-xl5);
+    `}
   }
   h2 {
     font-size: 1.75rem;
     letter-spacing: -0.020625rem;
     font-weight: 600;
+    ${below.sm`
+      font-size: var(--size-xl4);
+    `}
   }
   h3 {
     font-size: 1.5rem;
     letter-spacing: -0.029375rem;
     font-weight: 600;
+    ${below.sm`
+      font-size: var(--size-xl3);
+    `}
   }
   h4 {
     font-size: 1.25rem;
     letter-spacing: -0.020625rem;
     font-weight: 600;
+    ${below.sm`
+      font-size: var(--size-xl2);
+    `}
   }
   h5 {
     font-size: 1rem;

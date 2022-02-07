@@ -7,6 +7,9 @@ export const SideNav = () => {
   return (
     <NavContainer>
       <a>
+        <Button>Contact</Button>
+      </a>
+      <a>
         <Button>Notes</Button>
       </a>
       <a>

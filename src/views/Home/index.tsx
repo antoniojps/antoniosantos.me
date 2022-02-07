@@ -10,7 +10,7 @@ import {
   Nav,
   FooterWrapper,
 } from "./styles";
-import { ContentGrid, Footer, Logo, SideNav } from "../../components";
+import { ContentGrid, Footer, Logo, SideNav, TechStack } from "../../components";
 
 export const HomeView = () => {
   return (
@@ -54,6 +54,7 @@ export const HomeView = () => {
                 with <b>React</b> and have experience with Vue.
               </p>
             </WrittenContent>
+            <TechStack />
           </Article>
         </Main>
         <FooterWrapper>

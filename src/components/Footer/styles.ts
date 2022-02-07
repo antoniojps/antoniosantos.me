@@ -5,7 +5,7 @@ export const FooterContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 
   ${below.md`
     flex-direction: column;

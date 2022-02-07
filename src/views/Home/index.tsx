@@ -51,7 +51,7 @@ export const HomeView = () => {
                 personal projects. I have solid fundamentals in HTML, CSS and have made{" "}
                 <b>Javascript</b>
                 my main focus for the past 4 years. I like building challenging interfaces mainly
-                with <b>React</b> and have experience with Vue JS.
+                with <b>React</b> and have experience with Vue.
               </p>
             </WrittenContent>
           </Article>

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { FooterContainer, FooterStart, FooterEnd, FooterEndInner, Message } from "./styles";
 import { Button, Logo } from "../";
-import { FooterIcon } from "./icon";
+import { FooterIcon } from "./Icon";
 
 export const Footer = () => {
   const year = useMemo(() => new Date().getFullYear(), []);

@@ -196,6 +196,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.75rem;
     letter-spacing: -0.020625rem;
     font-weight: 600;
+    margin-top: 60px;
+    margin-bottom: 14px;
     ${below.sm`
       font-size: var(--size-xl4);
     `}

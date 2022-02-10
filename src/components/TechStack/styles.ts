@@ -54,7 +54,13 @@ export const Box = styled.div<BoxProps>`
 
   svg {
     height: 100%;
+    transition: transform 0.4s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
+
   ${background};
   ${padding};
 `;

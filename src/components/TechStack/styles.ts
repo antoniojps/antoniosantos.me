@@ -42,7 +42,7 @@ export const End = styled.div`
 
 interface BoxProps extends PaddingProps, BackgroundProps {}
 
-export const Box = styled.div<BoxProps>`
+export const Box = styled.a<BoxProps>`
   box-sizing: border-box;
   border-radius: 12px;
   width: 100%;

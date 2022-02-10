@@ -15,6 +15,7 @@ interface BoxStackProps extends BackgroundColorProps {
     | "git"
     | "javascript"
     | "typescript";
+  link: string;
 }
 
 const IconStack = ({ name }: Pick<BoxStackProps, "name">) => {
@@ -281,9 +282,15 @@ const nameColorMap = {
   typescript: "#007ACC",
 };
 
-export const BoxStack = ({ name = "react" }: BoxStackProps) => {
+export const BoxStack = ({ name = "react", link = "https://reactjs.org/" }: BoxStackProps) => {
   return (
-    <Box background={nameColorMap[name]} padding={name !== "typescript" ? "10px" : 0}>
+    <Box
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      background={nameColorMap[name]}
+      padding={name !== "typescript" ? "10px" : 0}
+    >
       <IconStack name={name} />
     </Box>
   );

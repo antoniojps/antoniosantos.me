@@ -11,7 +11,7 @@ export const Grid = styled.div`
   height: 100%;
 
   ${below.md`
-    grid-template-rows: 188px 376px;
+    grid-template-rows: 1fr auto;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
   `}
@@ -25,6 +25,7 @@ const commonStyles = css`
 `;
 
 export const A = styled.div`
+  position: relative;
   grid-column: 1 / 4;
   grid-row: 1;
   ${below.md`
@@ -32,11 +33,11 @@ export const A = styled.div`
     grid-row: auto / auto;
   `}
   background-color: rgba(0, 0, 0, 0.02);
-  background-image: url("/card-ytrank.png");
   ${commonStyles};
 `;
 
 export const B = styled.div`
+  position: relative;
   grid-column: 1 / 4;
   grid-row: 2;
   ${below.md`
@@ -44,15 +45,14 @@ export const B = styled.div`
     grid-row: auto / auto;
   `}
   background-color: rgba(0, 0, 0, 0.02);
-  background-image: url("/card-tvg.png");
   ${commonStyles};
 `;
 
 export const C = styled.div`
+  position: relative;
   grid-column: 4 / 9;
   grid-row: 1 / span 2;
   background-color: rgba(0, 0, 0, 0.02);
-  background-image: url("/card-ua.png");
   ${commonStyles};
 
   ${below.md`

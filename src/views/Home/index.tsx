@@ -10,7 +10,7 @@ import {
   Nav,
   FooterWrapper,
 } from "./styles";
-import { ContentGrid, Footer, Logo, SideNav, TechStack } from "../../components";
+import { ContentGrid, Footer, Logo, SideNav, TechStack, ContentSplit } from "../../components";
 
 export const HomeView = () => {
   return (
@@ -77,6 +77,7 @@ export const HomeView = () => {
                 age of 10 is in the sea, <b>surfing</b>.
               </p>
             </WrittenContent>
+            <ContentSplit />
           </Article>
         </Main>
         <FooterWrapper>

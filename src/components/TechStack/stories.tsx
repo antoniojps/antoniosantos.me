@@ -8,4 +8,4 @@ export default {
 } as ComponentMeta<typeof TechStack>;
 
 export const Base = () => <TechStack />;
-export const Box = () => <BoxStack name="typescript" />;
+export const Box = () => <BoxStack name="typescript" link="http://google.com" />;

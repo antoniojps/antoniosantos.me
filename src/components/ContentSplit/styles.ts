@@ -1,4 +1,4 @@
-import { below } from "@/utils";
+import { below } from "~/lib";
 import styled from "styled-components";
 
 export const Aside = styled.aside`

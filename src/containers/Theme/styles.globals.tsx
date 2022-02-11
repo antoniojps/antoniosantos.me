@@ -1,4 +1,4 @@
-import { below } from "@/utils";
+import { below } from "~/lib";
 import { createGlobalStyle } from "styled-components";
 
 export const CssVariables = createGlobalStyle`

@@ -1,4 +1,4 @@
-import { below } from "@/utils";
+import { below } from "~/lib";
 import styled from "styled-components";
 import { background, BackgroundProps, padding, PaddingProps } from "styled-system";
 

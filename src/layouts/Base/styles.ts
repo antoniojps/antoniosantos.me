@@ -1,4 +1,4 @@
-import { below } from "@/utils";
+import { below } from "~/lib";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -62,33 +62,5 @@ export const Article = styled.article`
     width: auto;
     padding-right: var(--space-6);
     padding-left: var(--space-6);
-  `}
-`;
-
-export const WrittenContent = styled.div`
-  width: calc(100% - 119px);
-  margin-left: auto;
-  > * {
-    max-width: 681px;
-  }
-
-  ${below.md`
-    width: 100%;
-    margin-right: auto;
-    > * {
-      max-width: 100%;
-    }
-  `}
-`;
-
-export const Header = styled.header``;
-
-export const Aside = styled.aside`
-  max-width: 918px;
-  height: 396px;
-  margin: 60px 0;
-  ${below.md`
-    height: auto;
-    margin: 30px 0;
   `}
 `;

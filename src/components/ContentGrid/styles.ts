@@ -1,4 +1,4 @@
-import { below } from "@/utils";
+import { below } from "~/lib";
 import styled, { css } from "styled-components";
 
 export const Grid = styled.div`

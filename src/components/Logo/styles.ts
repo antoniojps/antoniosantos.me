@@ -8,7 +8,7 @@ export const AvatarContainer = styled.div`
   margin-right: 12px;
 `;
 
-export const LogoWrapper = styled.div<SpaceProps>`
+export const LogoWrapper = styled.a<SpaceProps>`
   display: flex;
   align-items: center;
   ${space};

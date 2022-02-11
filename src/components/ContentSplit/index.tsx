@@ -8,13 +8,19 @@ export const ContentSplit = () => {
   return (
     <Aside>
       <A>
-        <Image src={ImgSurfFish} alt="Surfer in a wave, blue, white board" quality={100} />
+        <Image
+          src={ImgSurfFish}
+          alt="Surfer in a wave, blue, white board"
+          quality={100}
+          placeholder="blur"
+        />
       </A>
       <B>
         <Image
           src={ImgSurfSunset}
           alt="Surfer falling from wave, sunset, colored board"
           quality={100}
+          placeholder="blur"
         />
       </B>
     </Aside>

@@ -112,7 +112,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: var(--font-sans);
   }
   p {
-    margin: var(--space-4x) 0;
+    margin: var(--space-4) 0;
     font-size: var(--size-xl2);
     line-height: 1.625em;
     ${below.sm`
@@ -124,7 +124,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     font-size: 0.875rem;
   }
-  b {
+  b, strong {
     font-weight: var(--weight-bold);
     background-color: #F3FF00;
     padding: 0 4px;
@@ -163,7 +163,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   li {
     margin-bottom: 0.625rem;
-    font-size: 1em;
+    font-size: var(--size-xl2);
     line-height: 1.625em;
   }
   ul li:before {

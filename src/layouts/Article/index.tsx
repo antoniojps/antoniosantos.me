@@ -1,6 +1,6 @@
 import React from "react";
 import { Logo, WrittenContent } from "../../components";
-import { NoteLayoutProps } from "./types";
+import { ArticleLayoutProps } from "./types";
 import { MDXRemote } from "next-mdx-remote";
 import Head from "next/head";
 import { BaseLayout } from "../Base";
@@ -10,7 +10,7 @@ const components = {
   Head,
 };
 
-export const NoteLayout = ({ content, title, description }: NoteLayoutProps) => {
+export const ArticleLayout = ({ content, title, description }: ArticleLayoutProps) => {
   return (
     <BaseLayout>
       <header>
@@ -26,4 +26,4 @@ export const NoteLayout = ({ content, title, description }: NoteLayoutProps) => 
   );
 };
 
-export default NoteLayout;
+export default ArticleLayout;

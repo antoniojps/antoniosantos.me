@@ -14,13 +14,23 @@ export const Footer = () => {
       </FooterStart>
       <FooterEnd>
         <FooterEndInner>
-          <Button>
+          <Button as="a" href="https://github.com/antoniojps" target="_blank" rel="noreferrer">
             <FooterIcon name="github" />
           </Button>
-          <Button>
+          <Button
+            as="a"
+            href="https://www.linkedin.com/in/antonio-pires-dos-santos"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FooterIcon name="linkedin" />
           </Button>
-          <Button>
+          <Button
+            as="a"
+            href="https://www.youtube.com/channel/UCl18p8_qTtRDIUHhcYvWAUQ"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FooterIcon name="youtube" />
           </Button>
         </FooterEndInner>

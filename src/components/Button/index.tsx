@@ -4,7 +4,7 @@ import { ButtonContainer } from "./styles";
 
 export const Button = ({ variant = "primary", children, as = "button", ...rest }: ButtonProps) => {
   return (
-    <ButtonContainer as={as} {...rest}>
+    <ButtonContainer as={as} {...rest} tabIndex={0}>
       {children}
     </ButtonContainer>
   );

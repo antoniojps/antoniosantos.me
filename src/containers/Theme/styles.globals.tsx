@@ -333,10 +333,6 @@ export const GlobalStyle = createGlobalStyle`
   blockquote :global(*:last-child) {
     margin-bottom: 0;
   }
-  ::selection {
-    background-color: var(--selection);
-    color: var(--base);
-  }
 `;
 
 export const PrismTheme = createGlobalStyle`

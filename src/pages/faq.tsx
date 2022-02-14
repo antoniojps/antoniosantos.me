@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
-import { DATA_PATH } from "~/lib/mdx";
+import { calculateMinutesToRead, DATA_PATH } from "~/lib/mdx";
 import { FrontMatter, PagePostProps } from "~/types/post";
 import { ArticleLayout } from "~/layouts";
 import { Seo } from "~/containers";
@@ -25,13 +25,18 @@ export const getStaticProps: GetStaticProps<PagePostProps> = async () => {
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
+  const minutesToRead = calculateMinutesToRead(content);
+  const dataSerializable = { ...data, date: data.date.toISOString() };
 
-  const mdxSource = await serialize(content, { scope: data });
+  const mdxSource = await serialize(content, { scope: dataSerializable });
 
   return {
     props: {
       source: mdxSource,
-      frontMatter: data as FrontMatter,
+      frontMatter: {
+        ...dataSerializable,
+        minutesToRead,
+      } as FrontMatter,
     },
   };
 };

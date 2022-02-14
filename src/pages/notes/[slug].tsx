@@ -4,7 +4,7 @@ import prism from "remark-prism";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
-import { postFilePaths, POSTS_PATH } from "~/lib/mdx";
+import { postFilePaths, POSTS_PATH, calculateMinutesToRead } from "~/lib/mdx";
 import { FrontMatter, PagePostProps } from "~/types/post";
 import { ArticleLayout } from "~/layouts";
 import { Seo } from "~/containers";
@@ -26,6 +26,8 @@ export const getStaticProps: GetStaticProps<PagePostProps> = async ({ params }) 
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
+  const minutesToRead = calculateMinutesToRead(content);
+  const dataSerializable = { ...data, date: data.date.toISOString() };
 
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
@@ -33,13 +35,16 @@ export const getStaticProps: GetStaticProps<PagePostProps> = async ({ params }) 
       remarkPlugins: [prism],
       rehypePlugins: [],
     },
-    scope: data,
+    scope: dataSerializable,
   });
 
   return {
     props: {
       source: mdxSource,
-      frontMatter: data as FrontMatter,
+      frontMatter: {
+        ...dataSerializable,
+        minutesToRead,
+      } as FrontMatter,
     },
   };
 };

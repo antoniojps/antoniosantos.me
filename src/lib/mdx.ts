@@ -9,3 +9,9 @@ export const postFilePaths = fs
   .readdirSync(POSTS_PATH)
   // Only include md(x) files
   .filter((path) => /\.mdx?$/.test(path));
+
+/*
+  Calculates minutes to read
+*/
+export const calculateMinutesToRead = (content: string) =>
+  Math.round(content.split(" ").length / 200);

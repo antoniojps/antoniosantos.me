@@ -21,12 +21,10 @@ export const HomeLayout = () => {
           <p>
             Currently I am a frontend developer based in <b>Portugal</b>.
           </p>
-          <br />
           <p>
             I enjoy diving my head into challenging projects and to freshen myself up I love going
             for a quick surf session.
           </p>
-          <br />
           <p>
             I really value my time and therefore everyone’s time, so I’ve gone to the effort of
             clarifying the usual round of questions.

@@ -9,7 +9,7 @@ export const WrittenContent = styled.div`
   }
 
   ${below.md`
-    width: 100%;
+    width: calc(100vw - 40px);
     margin-right: auto;
   `}
 `;

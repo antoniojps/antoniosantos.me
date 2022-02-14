@@ -1,11 +1,12 @@
 import React from "react";
-import { CssVariables, GlobalStyle } from "./styles.globals";
+import { CssVariables, GlobalStyle, PrismTheme } from "./styles.globals";
 
 export const Theme = () => {
   return (
     <>
       <CssVariables />
       <GlobalStyle />
+      <PrismTheme />
     </>
   );
 };

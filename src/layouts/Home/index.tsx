@@ -1,6 +1,13 @@
 import React from "react";
 import { Aside } from "./styles";
-import { ContentGrid, Logo, TechStack, ContentSplit, WrittenContent } from "../../components";
+import {
+  ContentGrid,
+  Logo,
+  TechStack,
+  ContentSplit,
+  WrittenContent,
+  HeaderLink,
+} from "../../components";
 import { BaseLayout } from "../Base";
 
 export const HomeLayout = () => {
@@ -30,7 +37,7 @@ export const HomeLayout = () => {
         <ContentGrid />
       </Aside>
       <WrittenContent>
-        <h2>Technology</h2>
+        <HeaderLink>Technology</HeaderLink>
         <p>
           My passion is in the frontend, eventhough I have experience with backend for personal
           projects. I have solid fundamentals in HTML, CSS and have made <b>Javascript</b>
@@ -40,21 +47,30 @@ export const HomeLayout = () => {
       </WrittenContent>
       <TechStack />
       <WrittenContent>
-        <h2>Sectors I have worked in</h2>
+        <HeaderLink>Sectors I have worked in</HeaderLink>
         <p>
           As a web developer I’ve worked with a large academic organization in the content
           management space, have worked in the e-commerce world and am currently working in the
           betting industry delivering products with challenging experiences to thousands of users.
         </p>
 
-        <h2>My personality</h2>
+        <HeaderLink>My personality</HeaderLink>
         <p>
           I like to think of myself as someone who is communicative, empathic, flexible and easy to
           get along with.
         </p>
-        <p>I’ve taken the 16Personalities test, here are my results.</p>
+        <p>
+          I’ve taken the 16Personalities test,{" "}
+          <a
+            href="https://www.16personalities.com/profiles/0375c1de2ed18"
+            target="_blank"
+            rel="noreferrer"
+          >
+            here are my results.
+          </a>
+        </p>
 
-        <h2>My interests</h2>
+        <HeaderLink>My interests</HeaderLink>
         <p>
           I enjoy listening to podcasts and anything cinematography. My true passion since the age
           of 10 is in the sea, <b>surfing</b>.

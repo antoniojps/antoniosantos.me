@@ -6,12 +6,18 @@ import path from "path";
 import { DATA_PATH } from "~/lib/mdx";
 import { FrontMatter, PagePostProps } from "~/types/post";
 import { ArticleLayout } from "~/layouts";
+import { Seo } from "~/containers";
 
 export default function PostPage({
   source,
   frontMatter,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <ArticleLayout content={source} {...frontMatter} />;
+  return (
+    <>
+      <Seo title={frontMatter.title} description={frontMatter.description} />
+      <ArticleLayout content={source} {...frontMatter} />;
+    </>
+  );
 }
 
 export const getStaticProps: GetStaticProps<PagePostProps> = async () => {

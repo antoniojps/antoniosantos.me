@@ -1,17 +1,24 @@
 import fs from "fs";
 import matter from "gray-matter";
+import prism from "remark-prism";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
 import { postFilePaths, POSTS_PATH } from "~/lib/mdx";
 import { FrontMatter, PagePostProps } from "~/types/post";
 import { ArticleLayout } from "~/layouts";
+import { Seo } from "~/containers";
 
 export default function PostPage({
   source,
   frontMatter,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <ArticleLayout content={source} {...frontMatter} />;
+  return (
+    <>
+      <Seo title={frontMatter.title} description={frontMatter.description} />
+      <ArticleLayout content={source} {...frontMatter} />;
+    </>
+  );
 }
 
 export const getStaticProps: GetStaticProps<PagePostProps> = async ({ params }) => {
@@ -20,7 +27,14 @@ export const getStaticProps: GetStaticProps<PagePostProps> = async ({ params }) 
 
   const { content, data } = matter(source);
 
-  const mdxSource = await serialize(content, { scope: data });
+  const mdxSource = await serialize(content, {
+    // Optionally pass remark/rehype plugins
+    mdxOptions: {
+      remarkPlugins: [prism],
+      rehypePlugins: [],
+    },
+    scope: data,
+  });
 
   return {
     props: {

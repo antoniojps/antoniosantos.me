@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo, WrittenContent } from "../../components";
+import { Logo, WrittenContent, HeaderLink, Link } from "../../components";
 import { ArticleLayoutProps } from "./types";
 import { MDXRemote } from "next-mdx-remote";
 import Head from "next/head";
@@ -8,6 +8,11 @@ import { BaseLayout } from "../Base";
 // Custom components/renderers to pass to MDX.
 const components = {
   Head,
+  h2: HeaderLink,
+  h3: HeaderLink,
+  h4: HeaderLink,
+  h5: HeaderLink,
+  a: Link,
 };
 
 export const ArticleLayout = ({ content, title, description }: ArticleLayoutProps) => {

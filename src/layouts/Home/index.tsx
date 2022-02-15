@@ -9,6 +9,7 @@ import {
   HeaderLink,
 } from "../../components";
 import { BaseLayout } from "../Base";
+import Link from "next/link";
 
 export const HomeLayout = () => {
   return (
@@ -27,7 +28,10 @@ export const HomeLayout = () => {
           </p>
           <p>
             I really value my time and therefore everyone’s time, so I’ve gone to the effort of
-            clarifying the usual round of questions.
+            clarifying the{" "}
+            <Link href="/faq" passHref>
+              <a>usual round of questions.</a>
+            </Link>
           </p>
         </WrittenContent>
       </header>

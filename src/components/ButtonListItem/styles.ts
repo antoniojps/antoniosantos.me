@@ -25,7 +25,6 @@ export const ButtonListContainer = styled.button`
   padding: 10px;
   background-color: var(--background);
   font-size: var(--size-base);
-  width: 100%;
   border-radius: 8px;
   text-decoration: none;
 

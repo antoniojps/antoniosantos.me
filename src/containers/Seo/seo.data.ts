@@ -11,6 +11,7 @@ const seo = {
     "antonio santos software developer",
   ],
   image: { src: "/share.jpg", width: 1686, height: 882 },
+  "google-analytics": "UA-96747943-3",
 };
 
 export default seo;

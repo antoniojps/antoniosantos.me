@@ -9,3 +9,4 @@ export * from "./WrittenContent";
 export * from "./HeaderLink";
 export * from "./Link";
 export * from "./ButtonListItem";
+export * from "./Experience";

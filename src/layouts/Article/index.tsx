@@ -1,6 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
-import { Logo, WrittenContent, HeaderLink, Link } from "../../components";
+import { Logo, WrittenContent, HeaderLink, Link, Experience } from "../../components";
 import { ArticleLayoutProps } from "./types";
 import { MDXRemote } from "next-mdx-remote";
 import Head from "next/head";
@@ -10,6 +10,7 @@ import { Information } from "./styles";
 // Custom components/renderers to pass to MDX.
 const components = {
   Head,
+  Experience,
   h2: HeaderLink,
   h3: HeaderLink,
   h4: HeaderLink,

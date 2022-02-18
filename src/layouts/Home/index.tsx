@@ -23,8 +23,11 @@ export const HomeLayout = () => {
             Currently I am a frontend developer based in <b>Portugal</b>.
           </p>
           <p>
-            I enjoy diving my head into challenging projects and to freshen myself up I love going
-            for a quick surf session.
+            I enjoy diving my head into{" "}
+            <Link href="/portfolio" passHref>
+              challenging projects
+            </Link>{" "}
+            and to freshen myself up I love going for a quick surf session.
           </p>
           <p>
             I really value my time and therefore everyone’s time, so I’ve gone to the effort of

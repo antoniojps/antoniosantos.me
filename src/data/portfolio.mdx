@@ -8,19 +8,19 @@ In this article I will talk about the projects I’ve worked and my role in them
 
 ## TVG
 
-Television Games Network is an American sports-oriented digital cable network dedicated to dedicated to horse racing. In this project my role was to integrate multiple teams which maintained, improved and develop features being delivered to the web and iOS platforms. There were multiple projects which I was part of, such as:
+Television Games Network is an American sports-oriented digital cable network dedicated to horse racing. In this project my role was to integrate multiple teams which maintained, improved and developed features being delivered to the web and iOS platforms. There were multiple projects which I was part of, such as:
 
 - Delivering a new **authentication flow** (cross-platform): login, sign-up and credentials recovery.
 - Developing a new **design system** from scratch for multiple platforms (web & iOS) currently being used by 30+ developers, this increased DX and allowed for a faster and higher quality development cycle for an already existing product.
-- Actively writing **documentation**: frontend onboarding guides, contribution guidelines.
-- Developing a **CLI** that helped developers initialize, develop, and maintain TVG packages and libraries (**monorepo**). It assisted in multiple ways, including scaffolding libraries, packages and design system components. The main was to improve the developer experience making it more efficient and standardized.
+- Actively writing **documentation**: frontend onboarding guides, contribution guidelines and other technical documentation.
+- Developing a **CLI** that helped developers initialize, develop and maintain TVG packages and libraries (**monorepo**). It assisted in multiple ways, including scaffolding libraries, packages and design system components. The main goal was to improve the developer experience making it more efficient and standardized.
 
 This project allowed me to apply a various range of solutions (frameworks, libraries, patterns):
 
-- **React**, react native, react-native-web, redux, apollo, axios, styled-components
-- **Typescript** and **flow**
-- **Jest** with enzyme and the **testing-library**
-- Babel, **webpack**
+- **React**, react native, react-native-web, redux, apollo, axios, styled-components, etc;
+- **Typescript** and **flow**;
+- **Jest** with enzyme and the **testing-library**;
+- Babel and **webpack**.
 
 And others, such as development flows, debugging, communication between apps, good code practices, problem solving and soft skills.
 
@@ -28,16 +28,16 @@ And others, such as development flows, debugging, communication between apps, go
 
 The **[Editor](https://editor.ua.pt)** was one of the most challenging projects I’ve worked on. I was responsible for the research and development of a visual and personalized CMS with features such as:
 
-- The **authentication flow,** including roles and permissions.
-- Visual, **editable and modular pages** with live preview and challenges such as :
-  - a custom rich text editor
-  - dynamic forms
-  - image gallery with all features (search, upload and edit)
-  - multi-language (portuguese and english)
-- **Collaborative edition** of pages with version control, history, multiple environments (scratch, saved and published) and an auto-save functionality.
+- The **authentication flow,** including roles and permissions;
+- Visual, **editable and modular pages** with live preview and challenges such as:
+  - a custom rich text editor;
+  - dynamic forms;
+  - image gallery with all features (search, upload and edit);
+  - multi-language (portuguese and english).
+- **Collaborative edition** of pages with version control, history, multiple environments (scratch, saved and published) and an auto-save functionality;
 - Implementation of a menu editor, made with drag and drop and inline edition.
 
-The main technologies behind this were **React** with **Redux** (redux toolkit) and styled-components, **immer**, **formik**, **draft.js.**
+The main technologies behind this were **React** with **redux** (redux toolkit) and styled-components, **immer**, **formik** and **draft.js.**
 
 One of the major challenges was performance (virtualizing long lists, memoization) with the end-goal of avoiding unnecessary re-renders. This allowed me to be more conscious about good practices and possible pitfalls.
 
@@ -45,69 +45,72 @@ References: [https://www.ua.pt/pt/portal/editor](https://www.ua.pt/pt/portal/edi
 
 ## Sawgrass Network
 
-This was a short-term freelance work for Frontedge Digital, delivering features for an e-commerce marketplace for Sawgrass Ink. My main role in this project was to improve developer workflow and develop components and pages.
+This was a short-term freelance work for Frontedge Digital, delivering features for an e-commerce marketplace for Sawgrass Ink. My main role in this project was to improve the developer's workflow and develop components and pages.
 
 - Implemented pages and components:
-  - the **search page** containing multiple filters with dynamic results
-  - a configurable **dashboard menu** and other quick wins
+  - the **search page** containing multiple filters with dynamic results;
+  - a configurable **dashboard menu** and other quick wins.
 - **Configured linters** to improve the overall quality of the code and contribution patterns.
 
 This was developed using **Vue** with **Vuex** and **Tailwind CSS.** As for the tools configured: **eslint**, prettier and lint-staged.
 
 ## YTRank
 
-[Youtube rank checker](https://ytrank.net) is my **pet-project since 2013**, the main goal of the web application is to check the keyword position of a video on the search result list of Youtube. All the solutions were paid and I decided to make my solution, ends up +5K (monthly) other users also need this.
+[Youtube rank checker](https://ytrank.net) is my **pet-project since 2013**.
+The main goal of the web application is to check the keyword position of a video on the search result list of Youtube. All the solutions were paid and I decided to make my solution, ends up +5K (monthly) other users also needed this.
 
 You can read more about this [history of the app here.](https://ytrank.net/whats-new)
 
-The published version of this app the following implementation:
+The published version of this app has the following implementation:
 
-- **GraphQL API** with Express (Apollo) and MongoDB, integrating a third-party API (youtube v3).
+- **GraphQL API** with Express (Apollo) and MongoDB, integrating a third-party API (youtube v3);
 - SPA app with **React**, **Redux,** styled-components, recharts and lottie for animations.
 
 Currently I’m turning this project into a SaaS product. The new stack involves:
 
-- Monorepo (nrwl/nx)
-- **Nest.js** for the backend with **PostgreSQL**.
-- **Next.js** for the frontend with **React**
-- **Typescript**
+- Monorepo (nrwl/nx);
+- **Nest.js** for the backend with **PostgreSQL**;
+- **Next.js** for the frontend with **React**;
+- **Typescript**.
 
 ## Github Dependencies
 
-This is a simple web tool that you can use to find your most used dependencies in github repos.\*\*\*\*
+This is a simple web tool that you can use to find your most used dependencies in github repos.
 
 You can login with github and it will fetch all your repositories dependencies, parsing that data and creating a chart of your most used dependencies which you can customize and download as an image.
 
-Try it [here](https://dependencies.vercel.app/) and here’s the [repo](https://github.com/antoniojps/github-dependencies).
-
 Main technologies and challenges:
 
-- **React** and next with next-auth
-- **Typescript**
-- Github **authentication** flow
-- Used `@graphql-codegen` to automatically create the services and type-definitions for Github’s GraphQL API.
-- Parsing the multiple package managers `npm` and `composer`.
-- Creating an **editable and downloadable chart**
-- Should be documented, tested and easy to contribute
+- **React** and next with next-auth;
+- **Typescript**;
+- Github **authentication** flow;
+- Used `@graphql-codegen` to automatically create the services and type-definitions for Github’s GraphQL API;
+- Parsing the multiple package managers `npm` and `composer`;
+- Creating an **editable and downloadable chart**;
+- Should be documented, tested and easy to contribute.
+
+Try it [here](https://dependencies.vercel.app/) and here’s the [repo](https://github.com/antoniojps/github-dependencies).
 
 ## Voluntários (Volunteers)
 
-_Voluntários_ is a platform with the aim to help connect causes with volunteers. The main goal is to have an index of people willing to volunteer and a way for them to be contacted by causes/projects looking for volunteers.
+_Voluntários_ is a platform with the aim to help connect causes with volunteers. The main goal is to have an index of people willing to volunteer and a way for them to be contacted by causes/projects.
 
 The main challenges were:
 
-- The [registration flow](https://voluntarios.app/sign-up) of a new volunteer, inspired by _Typeform_, where I implemented from scratch a paginated form with transitions and distinctive interactions while being keyboard accessible.
-- A list of all the volunteers, ordered by closest to you (location) and filterable, the major challenge here was on the backend.
+- The **[registration flow](https://voluntarios.app/sign-up)** of a new volunteer, inspired by _Typeform_, where I implemented from scratch a paginated form with transitions and distinctive interactions while being keyboard accessible;
+- A list of all the volunteers, ordered by closest to you (location) and filterable, the major challenge here was on the backend;
 - Customizable illustrated avatars, with the option of uploading one.
 
 You can check the [repo here](https://github.com/antoniojps/voluntarios).
 
 Stack and patterns:
 
-- **React** with next \*\*\*\*and next-auth, styled-jsx
-- Apollo server and MongoDB (mongoose)
-- **Storybook** to develop components in isolation with the **atomic-ui** pattern
-- **Jest**
+- **React** with next and next-auth and styled-jsx;
+- Apollo server and MongoDB (mongoose);
+- **Storybook** to develop components in isolation with the **atomic-ui** pattern;
+- **Jest**.
+
+You can check the website [here](https://voluntarios.app).
 
 ## Shootsgud Major League
 
@@ -115,30 +118,30 @@ Designed and implemented by me (frontend and backend), this was an e-sports webs
 
 This was possible with:
 
-- Integration with [PUBG’s API](https://developer.pubg.com/) for player and team statistics
+- Integration with [PUBG’s API](https://developer.pubg.com/) for player and team statistics;
 - Integration with an headless CMS, in this case [sanity.io](http://sanity.io).
 
 Here’s the [repo](https://github.com/antoniojps/pubg-league).
 
 The technical stack was:
 
-- React with **Next.js** and styled-components
-- Headless CMS with [Sanity.io](http://Sanity.io)
+- React with **Next.js** and styled-components;
+- Headless CMS with [Sanity.io](http://Sanity.io).
 
 ## Caldeira Surf Camp - Guesthouse
 
-This is a simple statically generated website for a guesthouse. Designed and developed by me.
+This is a simple website for a guesthouse. Designed and developed by me.
 
-- Multi-language (english and portuguese)
-- Statically generated with **Gatsby.**
+- Multi-language (english and portuguese);
+- Statically generated with **Gatsby.**;
 - Contact form with formik and an **serverless function**.
 
-The technologies behind this are **React** with **Gatsby** and a **serverless function** for the submitting the contact form.
+You can check the website [here](https://caldeirasurfcamp.com/).
 
 ## Open source contributions
 
 I’ve contributed to some open source packages, one of my goals is to contribute more:
 
-- https://github.com/geist-org/geist-ui (contributed)
-- https://github.com/ekwonye-richard/react-flags-select (contributed)
-- https://github.com/antoniojps/react-simple-minimap (created)
+- https://github.com/geist-org/geist-ui (contributed);
+- https://github.com/ekwonye-richard/react-flags-select (contributed);
+- https://github.com/antoniojps/react-simple-minimap (created).

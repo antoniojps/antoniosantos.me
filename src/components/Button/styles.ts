@@ -13,7 +13,6 @@ export const ButtonContainer = styled.button`
 
   &:hover {
     background-color: var(--background-2);
-    text-decoration: none;
   }
   &:focus {
     outline: 0;

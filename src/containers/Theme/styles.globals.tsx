@@ -155,7 +155,7 @@ export const GlobalStyle = createGlobalStyle`
   ol {
     padding: 0;
     list-style-type: none;
-    margin: 8px 8px 8px 16px;
+    margin: 8px 8px 30px 16px;
     color: var(--base);
   }
   ol {
@@ -170,9 +170,9 @@ export const GlobalStyle = createGlobalStyle`
     `}
   }
   ul li:before {
-    content: '–';
+    content: '•';
     display: inline-block;
-    color: var(--accents-4);
+    color: var(--base);
     position: absolute;
     margin-left: -0.9375rem;
   }

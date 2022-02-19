@@ -16,9 +16,9 @@ export const SideNav = () => {
       <Link href="/faq" passHref>
         <Button as="a">FAQ</Button>
       </Link>
-      {/* <Link href="/notes" passHref>
+      <Link href="/notes" passHref>
         <Button as="a">Notes</Button>
-      </Link> */}
+      </Link>
       <Button as="a" href="https://github.com/antoniojps" target="_blank" rel="noreferrer">
         <GithubLogo />
       </Button>

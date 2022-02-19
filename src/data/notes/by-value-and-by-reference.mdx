@@ -1,0 +1,66 @@
+---
+date: 2022-02-14
+title: The concept of by value and by reference in JS
+description: Analogies to understand the difference between by value and by reference in javascript.
+---
+
+There are two main types of values in JS: **primitives** and **objects**.
+
+- Primitive values: string, number, booleans, null and undefined.
+- Object values: arrays, functions
+
+There’s a key difference between how this values are assigned and passed around.
+
+- Primite values: always assigned as **value copies**.
+- Object values: always passed around as **references**.
+
+Let’s dig into this.
+
+## Primitives → by value
+
+Let’s assume a primitive value is a house.
+
+When you assign a variable to a primitive value `var a = "house"` you are giving it an address in memory. A good analogy could be imagine my neighbors really liked my house so they decided to make one exactly like mine, they build it but it’s in a different address (a new spot in memory). Some years later they decide they want to change the color of the painting, so they paint yellow, but it obviously won’t affect mine.
+
+![by-value.png](/by-value.png)
+
+This is what by value means, **when we assign / pass primitive variables around, we set a copy of the value in a different spot in memory**. This means that we can do the following:
+
+```js
+var a = 3;
+var b;
+
+// create new location in memory and assign a copy of the value of a
+b = a;
+// reassign a to 2
+a = 2;
+
+console.log(b); // 3
+console.log(a); // 2
+```
+
+## Objects → by reference
+
+Let’s assume a book available for rent is an object.
+
+I rent the book, and the book is pristine, now I am not the most careful personal when it comes to objects (pun intended) and I drop a little bit of coffee on the third chapter of the book, now the next person that rents the book will notice those coffee stains.
+
+![by-reference.png](/by-reference.png)
+
+Now if I have an object in Javascript (it includes functions and arrays) and I set a variable equals to it, we are assigning that value to a location in memory. **When we reassign this same variable to another variable we are not creating a new location in memory but rather referencing that location**. So they become dependent, if we change the object it will reflect in both variables.
+
+```js
+var c = { name: "Antonio" };
+var d = c;
+
+// At the memory location that C is pointing at change the name to "Matilda"
+c.name = "Matilda";
+
+console.log(c.name); // Matilda
+console.log(d.name); // Matilda
+```
+
+References:
+
+- [You don't know JS yet](https://github.com/getify/You-Dont-Know-JS)
+- [Javascript: Understanding the weird parts](https://www.udemy.com/course/understand-javascript/learn/lecture/2322828#overview)

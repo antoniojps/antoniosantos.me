@@ -53,7 +53,10 @@ As the name says, it executes the code, line-by-line. JS is single-threaded and 
 - **Global** → the base execution context, created initially by the JS Engine;
 - **Functional** → created everytime a function is invoked.
 
-Side note, code executed inside an `eval` function also gets an execution context but this isn’t usually used.
+<Aside>
+  Code executed inside an `eval` function also gets an execution context but this isn’t usually
+  used.
+</Aside>
 
 ## The execution stack
 
@@ -78,6 +81,8 @@ function a() {
 var message = "global scope";
 a();
 ```
+
+References:
 
 - [You don't know JS yet](https://github.com/getify/You-Dont-Know-JS)
 - [Javascript: Understanding the weird parts](https://www.udemy.com/course/understand-javascript)

@@ -7,7 +7,7 @@ description: Analogies to understand the difference between by value and by refe
 There are two main types of values in JS: **primitives** and **objects**.
 
 - Primitive values: string, number, booleans, null and undefined.
-- Object values: arrays, functions
+- Object values: a collection of name value pairs.
 
 There’s a key difference between how this values are assigned and passed around.
 
@@ -18,9 +18,7 @@ Let’s dig into this.
 
 ## Primitives → by value
 
-Let’s assume a primitive value is a house.
-
-When you assign a variable to a primitive value `var a = "house"` you are giving it an address in memory. Let's try an analogy: imagine my neighbors really liked my house so they decided to make one exactly like mine, they build it but it’s in a different address (a new spot in memory). Some years later they decide they want to change the color of the painting, so they paint yellow, but it obviously won’t affect mine.
+Imagine my neighbors really liked my house so they decided to make one exactly like mine, they build it so it's obviously in a different address (a new spot in memory). Some years later they decide they want to change the color of the painting, so they paint yellow, but it obviously won’t affect mine.
 
 ![by-value.png](/by-value.png)
 

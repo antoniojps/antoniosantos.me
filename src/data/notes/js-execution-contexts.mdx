@@ -1,0 +1,83 @@
+---
+date: 2022-02-20
+title: JS Execution context
+description: Exploring javascript's execution context, the creation types, stack and the scope chain.
+---
+
+In order to understand JS’s execution contexts we need to understand two concepts.
+
+- **Syntax parsers**: a program that someone else wrote that reads your code and turns it into instructions the computer can understand and act on;
+- **Lexical environment**: where something sits physically in the code you write.
+
+JS is a programming language where the lexical environment is important, this means that where you write your code and what surrounds it matters.
+
+## Execution context
+
+In JS there are lots of lexical environments, which one is running is managed by the execution context. The base execution context is your **Global** execution context, this is accessible everywhere in your code.
+
+Whenever your code is run the JS Engine runs the global execution context which creates some things for you:
+
+- Global object;
+- `this` - it gives you access to the global object (`Window` on browsers);
+- Your code (variables and functions).
+
+Every execution context also has a link to the outer environment / reference (null in the global level) that is defined by the lexical environment of where that function was defined, if the engine can’t find a variable it will go to the [outer reference and try to find that variable](#the-scope-chain).
+
+The execution context is created in two phases:
+
+### 1st → The creation phase
+
+This sets up the global object, `this`, the outer reference and it **sets the memory space for variables and functions**. This last step is called **hoisting:**
+
+- Functions are saved in their entirety in memory space;
+- Variables are declared and set has `undefined`.
+
+```jsx
+b(); // "Called b"
+console.log(a); // undefined
+
+var a = "Hello";
+function b() {
+	console.log("Called b";
+}
+
+console.log(a); // "Hello"
+```
+
+### 2nd → Code execution phase
+
+As the name says, it executes the code, line-by-line. JS is single-threaded and synchronous, this means it runs one command at a time and in order.
+
+## Types of execution contexts
+
+- **Global** → the base execution context, created initially by the JS Engine;
+- **Functional** → created everytime a function is invoked.
+
+Side note, code executed inside an `eval` function also gets an execution context but this isn’t usually used.
+
+## The execution stack
+
+The execution stack, is just like the name says, execution contexts on top of the others and the context on top is ran and once finished it will get popped of the stack until the stack is back to the global execution context.
+
+## The scope chain
+
+Scope means “Where can I access a variable?”. When the execution context is created it creates an outer reference, that depends on where a function was defined lexically. If it can’t find a variable within that scope, it will go down on the scope chain and try to find that variable on the outer-reference. This entire act of searching is called the scope chain.
+
+```jsx
+// this function sits lexically on top of the global environment
+// the outer reference will be the global execution context
+function b() {
+  console.log(message); // "global scope"
+}
+
+function a() {
+  var message = "function scope";
+  b();
+}
+
+var message = "global scope";
+a();
+```
+
+- [You don't know JS yet](https://github.com/getify/You-Dont-Know-JS)
+- [Javascript: Understanding the weird parts](https://www.udemy.com/course/understand-javascript)

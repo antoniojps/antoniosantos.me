@@ -51,7 +51,7 @@ export default function NotesListPage({ notes }: InferGetStaticPropsType<typeof 
       />
       <ContentLayout title="Notes">
         {notesByCategory.map((cat) => (
-          <>
+          <div key={cat.title}>
             <h2>{polishTitle(cat.title)}</h2>
             {cat.notes.length > 0 ? (
               cat.notes.map((note) => (
@@ -62,7 +62,7 @@ export default function NotesListPage({ notes }: InferGetStaticPropsType<typeof 
             ) : (
               <p>No notes yet!</p>
             )}
-          </>
+          </div>
         ))}
       </ContentLayout>
     </>

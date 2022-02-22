@@ -46,7 +46,12 @@ export const ArticleLayout = ({
           <Logo marginBottom="var(--space-7)" />
           <h1>{title}</h1>
           <Information>
-            <AsideNote>{category}</AsideNote> / {dateMessage} • {readTimeMessage}
+            {category && (
+              <>
+                <AsideNote>{category}</AsideNote> /{" "}
+              </>
+            )}
+            {dateMessage} • {readTimeMessage}
           </Information>
         </WrittenContent>
       </header>

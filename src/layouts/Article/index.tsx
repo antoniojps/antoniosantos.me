@@ -28,8 +28,15 @@ const components = {
   a: Link,
 };
 
-export const ArticleLayout = ({ content, title, date, minutesToRead }: ArticleLayoutProps) => {
-  const readTimeMessage = minutesToRead + ` min${minutesToRead > 1 ? "s" : ""} read`;
+export const ArticleLayout = ({
+  content,
+  title,
+  date,
+  minutesToRead,
+  category,
+}: ArticleLayoutProps) => {
+  const readTimeMessage =
+    minutesToRead > 0 ? minutesToRead + ` min${minutesToRead > 1 ? "s" : ""} read` : "quick read";
   const dateMessage = format(new Date(date), "MMMM do, yyyy");
 
   return (
@@ -39,7 +46,7 @@ export const ArticleLayout = ({ content, title, date, minutesToRead }: ArticleLa
           <Logo marginBottom="var(--space-7)" />
           <h1>{title}</h1>
           <Information>
-            {dateMessage} • {readTimeMessage}
+            <AsideNote>{category}</AsideNote> / {dateMessage} • {readTimeMessage}
           </Information>
         </WrittenContent>
       </header>

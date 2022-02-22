@@ -1,0 +1,28 @@
+---
+date: 2022-02-19
+title: Flatten multidimensional array exercise
+description: Daily javascript exercises.
+category: exercise
+---
+
+Given a multidimensional array with depth of n, flatten it. Once flattened make it available as a method on array instance.
+
+Solution:
+
+```js
+const a = [1, [2, 3, [4, 5, [6, 7]]]];
+
+function flatten(arr) {
+  return arr.reduce((acc, curr) => {
+    const isArray = Array.isArray(curr);
+    const flat = isArray ? [...acc, ...curr] : [...acc, curr];
+    return isArray ? flatten(flat) : flat;
+  }, []);
+}
+
+Array.prototype.flatten = function () {
+  return flatten(this);
+};
+
+console.log(a.flatten()); // [1,2,3,4,5,6,7]
+```

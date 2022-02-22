@@ -5,6 +5,7 @@ export interface FrontMatterBase {
   date: string;
   description: string;
   slug: string;
+  category?: "exercise";
 }
 
 export interface FrontMatter extends FrontMatterBase {

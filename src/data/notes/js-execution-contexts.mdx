@@ -32,6 +32,10 @@ This sets up the global object, `this`, the outer reference and it **sets the me
 - Functions are saved in their entirety in memory space;
 - Variables are declared and set has `undefined`.
 
+![Creation phase steps](/creation-phase.jpg)
+
+For example, the first log of `a` will be undefined due to hoisting.
+
 ```jsx
 b(); // "Called b"
 console.log(a); // undefined

@@ -7,11 +7,19 @@ import {
   ContentSplit,
   WrittenContent,
   HeaderLink,
+  AsideNote,
 } from "../../components";
 import { BaseLayout } from "../Base";
+import { formatDistanceStrict } from "date-fns";
 import Link from "next/link";
 
+const JAVASCRIPT_DATE = "2017-01-01";
+
 export const HomeLayout = () => {
+  const distanceJavascript = formatDistanceStrict(new Date(), new Date(JAVASCRIPT_DATE), {
+    unit: "year",
+  });
+
   return (
     <BaseLayout>
       <header>
@@ -46,17 +54,19 @@ export const HomeLayout = () => {
         <p>
           My passion is in the frontend, eventhough I have experience with backend for personal
           projects. I have solid fundamentals in HTML, CSS and have made <b>Javascript </b>
-          my main focus for the past 4 years. I like building challenging interfaces mainly with{" "}
-          <b>React</b> and have experience with Vue.
+          my main focus for the past {distanceJavascript}. I like building challenging interfaces
+          mainly with <b>React</b> and have experience with Vue.
         </p>
+        <AsideNote>The javascript experience is calculated on every website build.</AsideNote>
       </WrittenContent>
       <TechStack />
       <WrittenContent>
         <HeaderLink>Sectors I have worked in</HeaderLink>
         <p>
           As a web developer I’ve worked with a large academic organization in the content
-          management space, have worked in the e-commerce world and am currently working in the
-          betting industry delivering products with challenging experiences to thousands of users.
+          management space, in the e-commerce world and the betting industry. I'm currently working
+          for a web streaming platform delivering products with challenging experiences to thousands
+          of users.
         </p>
 
         <HeaderLink>My personality</HeaderLink>

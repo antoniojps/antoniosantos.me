@@ -1,6 +1,6 @@
 import React from "react";
 import { formatDistance } from "date-fns";
-import { Badge } from "./styles";
+import { AsideNote } from "../AsideNote";
 
 const REACT_DATE = "2018-11-01";
 const JAVASCRIPT_DATE = "2017-01-01";
@@ -17,7 +17,7 @@ export const Experience = () => {
       <p>As a professional frontend developer I have {distanceHired} of experience.</p>
       <p>The fundamentals - HTML, CSS and Javascript, {distanceJavascript}.</p>
       <p>React, {distanceReact}</p>
-      <Badge>This is calculcated on every website build</Badge>
+      <AsideNote>This is calculcated on every website build</AsideNote>
     </>
   );
 };

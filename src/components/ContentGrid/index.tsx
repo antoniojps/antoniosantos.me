@@ -10,7 +10,7 @@ export const ContentGrid = () => {
   return (
     <Grid>
       <A>
-        <Link href="/portfolio#ytrank" passHref>
+        <Link href="/portfolio#tubelab-(previously-ytrank)" passHref>
           <a>
             <Image
               src={ImgCardYtrank}

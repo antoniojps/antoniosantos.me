@@ -63,6 +63,27 @@ One of the major challenges was performance (virtualizing long lists, memoizatio
 
 References: [https://www.ua.pt/pt/portal/editor](https://www.ua.pt/pt/portal/editor)
 
+## TubeLab (previously YTrank)
+
+[TubeLab](https://tubelab.net) is my **pet-project since 2013**.
+The main goal of the web application is to [track the position of a video on the search result list of Youtube](https://tubelab.net/). All the solutions were paid and I decided to make my solution, ends up +5K (monthly) other users also needed this.
+
+You can read more about this [history of the app here.](https://tubelab.net/blog/history)
+
+The published version of this app has the following implementation:
+
+- **GraphQL API** with Express (Apollo) with TypeORM (PostgreSQL);
+- The web app is made with **[Next.js](https://nextjs.org/)** (React);
+- The tracking system uses [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview?pivots=programming-language-javascript) and [Elasticsearch](https://www.elastic.co/).
+- Monorepo with [nrwl/nx](https://github.com/nrwl/nx);
+- [Typescript](https://www.typescriptlang.org/).
+
+This is a SaaS and to make it possible there were multiple integrations including:
+- **[Stripe](https://stripe.com/)** for subscriptions / payments;
+- **[AWS Simple Email Service](https://aws.amazon.com/ses/)** for emails;
+- Youtube data API for the data source;
+- Axiom for logs.
+
 ## Sawgrass Network
 
 This was a short-term freelance work for Frontedge Digital, delivering features for an e-commerce marketplace for Sawgrass Ink. My main role in this project was to improve the developer's workflow and develop components and pages.
@@ -74,24 +95,6 @@ This was a short-term freelance work for Frontedge Digital, delivering features 
 
 This was developed using **Vue** with **Vuex** and **Tailwind CSS.** As for the tools configured: **eslint**, prettier and lint-staged.
 
-## YTRank
-
-[Youtube rank checker](https://ytrank.net) is my **pet-project since 2013**.
-The main goal of the web application is to check the keyword position of a video on the search result list of Youtube. All the solutions were paid and I decided to make my solution, ends up +5K (monthly) other users also needed this.
-
-You can read more about this [history of the app here.](https://ytrank.net/whats-new)
-
-The published version of this app has the following implementation:
-
-- **GraphQL API** with Express (Apollo) and MongoDB, integrating a third-party API (youtube v3);
-- SPA app with **React**, **Redux,** styled-components, recharts and lottie for animations.
-
-Currently I’m turning this project into a SaaS product. The new stack involves:
-
-- Monorepo (nrwl/nx);
-- **Nest.js** for the backend with **PostgreSQL**;
-- **Next.js** for the frontend with **React**;
-- **Typescript**.
 
 ## Github Dependencies
 

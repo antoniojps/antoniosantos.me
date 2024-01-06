@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ImgSurfSunset from "../../../public/surf-sunset.png";
+import ImgSwell from "../../../public/swell.png";
 import ImgSurfFish from "../../../public/surf-fish.png";
 import { Aside, A, B } from "./styles";
 
@@ -17,8 +17,8 @@ export const ContentSplit = () => {
       </A>
       <B>
         <Image
-          src={ImgSurfSunset}
-          alt="Surfer falling from wave, sunset, colored board"
+          src={ImgSwell}
+          alt="Dog, tongue out. Jack Russel. Laying in grass with tenis ball."
           quality={100}
           placeholder="blur"
         />

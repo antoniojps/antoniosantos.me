@@ -11,7 +11,7 @@ export const TechStack = () => {
       <BoxStack name="graphql" link="https://graphql.org/" />
       <BoxStack name="gatsby" link="https://www.gatsbyjs.com/" />
       <BoxStack name="git" link="https://git-scm.com/" />
-      <BoxStack name="mongo" link="https://www.mongodb.com/" />
+      <BoxStack name="postgresql" link="https://www.postgresql.org/" />
       <BoxStack name="vue" link="https://vuejs.org/" />
       <BoxStack name="next" link="https://nextjs.org/" />
       <BoxStack name="node" link="https://nodejs.org/" />

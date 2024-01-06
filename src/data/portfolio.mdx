@@ -8,7 +8,7 @@ In this article I will talk about the projects I’ve worked and my role in them
 
 ## Proximus Pickx
 
-Proximus is the largest of Belgium's three mobile telecommunications companies. Proximus along-many products offers **Pickx**, a streaming platform that aggregates multiple content for their clients to watch.
+[Proximus](https://www.proximus.be/) is the largest of Belgium's three mobile telecommunications companies. Proximus along-many products offers [**Pickx**](https://www.pickx.be/nl), a streaming platform that aggregates multiple content for their clients to watch.
 
 I'm currently working in a team to **deliver a new version of the web app**, which involves:
 
@@ -25,6 +25,29 @@ This project gave me a very good developer experience thanks to the following te
 - **React**, react-query, storybook, classnames.
 - **Next.js**, with css modules and typescript.
 - **Monorepo**, with nrwl/nx for managing the monorepo solution.
+
+## TubeLab (previously YTrank)
+
+[TubeLab](https://tubelab.net) is my **pet-project since 2013**.
+The main goal of the web application is to [track the position of a video on the search result list of Youtube](https://tubelab.net/). All the solutions were paid and I decided to make my solution, ends up +5K (monthly) other users also needed this.
+
+You can read more about this [history of the app here.](https://tubelab.net/blog/history)
+
+The published version of this app has the following implementation:
+
+- **API** with **Express** and TypeORM (**PostgreSQL**);
+- The web app is made with **[Next.js](https://nextjs.org/)** (React);
+- The tracking system uses [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview?pivots=programming-language-javascript) and [Elasticsearch](https://www.elastic.co/).
+- Monorepo with [nrwl/nx](https://github.com/nrwl/nx);
+- [Typescript](https://www.typescriptlang.org/).
+- Design system created from scratch ([Storybook](https://storybook.js.org/))
+- Designed with [Figma](https://www.figma.com/).
+
+This is a SaaS and to make it possible there were multiple integrations including:
+- **[Stripe](https://stripe.com/)** for subscriptions / payments;
+- **[AWS Simple Email Service](https://aws.amazon.com/ses/)** for emails;
+- Youtube data API for the data source;
+- Axiom for logs.
 
 ## TVG
 
@@ -63,29 +86,6 @@ One of the major challenges was performance (virtualizing long lists, memoizatio
 
 References: [https://www.ua.pt/pt/portal/editor](https://www.ua.pt/pt/portal/editor)
 
-## TubeLab (previously YTrank)
-
-[TubeLab](https://tubelab.net) is my **pet-project since 2013**.
-The main goal of the web application is to [track the position of a video on the search result list of Youtube](https://tubelab.net/). All the solutions were paid and I decided to make my solution, ends up +5K (monthly) other users also needed this.
-
-You can read more about this [history of the app here.](https://tubelab.net/blog/history)
-
-The published version of this app has the following implementation:
-
-- **GraphQL API** with Express (Apollo) and TypeORM (PostgreSQL);
-- The web app is made with **[Next.js](https://nextjs.org/)** (React);
-- The tracking system uses [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview?pivots=programming-language-javascript) and [Elasticsearch](https://www.elastic.co/).
-- Monorepo with [nrwl/nx](https://github.com/nrwl/nx);
-- [Typescript](https://www.typescriptlang.org/).
-- Design system created from scratch ([Storybook](https://storybook.js.org/))
-- Designed with [Figma](https://www.figma.com/).
-
-This is a SaaS and to make it possible there were multiple integrations including:
-- **[Stripe](https://stripe.com/)** for subscriptions / payments;
-- **[AWS Simple Email Service](https://aws.amazon.com/ses/)** for emails;
-- Youtube data API for the data source;
-- Axiom for logs.
-
 ## Sawgrass Network
 
 This was a short-term freelance work for Frontedge Digital, delivering features for an e-commerce marketplace for Sawgrass Ink. My main role in this project was to improve the developer's workflow and develop components and pages.
@@ -123,7 +123,7 @@ _Voluntários_ is a platform with the aim to help connect causes with volunteers
 The main challenges were:
 
 - The **[registration flow](https://voluntarios.app/sign-up)** of a new volunteer, inspired by _Typeform_, where I implemented from scratch a paginated form with transitions and distinctive interactions while being keyboard accessible;
-- A list of all the volunteers, ordered by closest to you (location) and filterable, the major challenge here was on the backend;
+- A list of all the volunteers, ordered by closest to you (location) and filterable, the major challenge here was on the backend. Made with **MongoDB**.
 - Customizable illustrated avatars, with the option of uploading one.
 
 You can check the [repo here](https://github.com/antoniojps/voluntarios).
@@ -151,7 +151,7 @@ Here’s the [repo](https://github.com/antoniojps/pubg-league).
 The technical stack was:
 
 - React with **Next.js** and styled-components;
-- Headless CMS with [Sanity.io](http://Sanity.io).
+- **Headless CMS** with [Sanity.io](http://Sanity.io).
 
 ## Caldeira Surf Camp - Guesthouse
 

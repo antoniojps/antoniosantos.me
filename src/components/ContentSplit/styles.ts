@@ -5,7 +5,7 @@ export const Aside = styled.aside`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 24px;
   width: 100%;
   height: auto;
   margin: 60px 0;

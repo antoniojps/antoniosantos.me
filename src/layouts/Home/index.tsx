@@ -14,9 +14,13 @@ import { formatDistanceStrict } from "date-fns";
 import Link from "next/link";
 
 const JAVASCRIPT_DATE = "2017-01-01";
+const DOGGIE_DATE = '2020-12-25'
 
 export const HomeLayout = () => {
   const distanceJavascript = formatDistanceStrict(new Date(), new Date(JAVASCRIPT_DATE), {
+    unit: "year",
+  });
+  const distanceDoggie = formatDistanceStrict(new Date(), new Date(DOGGIE_DATE), {
     unit: "year",
   });
 
@@ -28,7 +32,7 @@ export const HomeLayout = () => {
           <h1>I&apos;m Antonio, a software developer</h1>
           <p>Hello! Thanks for taking interest in me and my profile.</p>
           <p>
-            Currently I am a frontend developer based in <b>Portugal</b>.
+            Currently I am a software developer based in <b>Portugal</b>.
           </p>
           <p>
             I enjoy diving my head into{" "}
@@ -52,10 +56,9 @@ export const HomeLayout = () => {
       <WrittenContent>
         <HeaderLink>Technology</HeaderLink>
         <p>
-          My passion is in the frontend, eventhough I have experience with backend for personal
-          projects. I have solid fundamentals in HTML, CSS and have made <b>Javascript </b>
-          my main focus for the past {distanceJavascript}. I like building challenging interfaces
-          mainly with <b>React</b> and have experience with Vue.
+          My passion is in the web. I have solid fundamentals in HTML, CSS and have made <b>Javascript </b>
+          (Typescript) my main focus for the past {distanceJavascript}. I like building challenging interfaces
+          mainly with <b>React</b> and have experience with Vue. As for the backend, I enjoy creating APIs (REST & GraphQL) with <b>Node.js (Express.js)</b> and PostgreSQL.
         </p>
         <AsideNote>The javascript experience is calculated on every website build.</AsideNote>
       </WrittenContent>
@@ -63,10 +66,8 @@ export const HomeLayout = () => {
       <WrittenContent>
         <HeaderLink>Sectors I have worked in</HeaderLink>
         <p>
-          As a web developer I’ve worked with a large academic organization in the content
-          management space, in the e-commerce world and the betting industry. I'm currently working
-          for a web streaming platform delivering products with challenging experiences to thousands
-          of users.
+          I’m currently working for a web streaming platform delivering products with challenging experiences to thousands
+          of users. I’ve worked with a large academic organization creating a custom CMS, in the e-commerce world and the betting industry.
         </p>
 
         <HeaderLink>My personality</HeaderLink>
@@ -88,7 +89,7 @@ export const HomeLayout = () => {
         <HeaderLink>My interests</HeaderLink>
         <p>
           I enjoy listening to podcasts and anything cinematography. My true passion since the age
-          of 10 is in the sea, <b>surfing</b>.
+          of 10 is in the sea, <b>surfing</b> and since {distanceDoggie}, walking my dog - <i>Swell</i>.
         </p>
       </WrittenContent>
       <ContentSplit />

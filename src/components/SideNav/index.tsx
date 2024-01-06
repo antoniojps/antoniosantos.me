@@ -16,6 +16,9 @@ export const SideNav = () => {
       <Link href="/faq" passHref>
         <Button as="a">FAQ</Button>
       </Link>
+      <a href="/antonio-santos-cv.pdf">
+        <Button>CV</Button>
+      </a>
       <Link href="/notes" passHref>
         <Button as="a">Notes</Button>
       </Link>

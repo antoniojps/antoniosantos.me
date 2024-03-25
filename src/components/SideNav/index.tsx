@@ -7,9 +7,6 @@ import { Button } from "..";
 export const SideNav = () => {
   return (
     <NavContainer>
-      <Button as="a" href="mailto:antoniojmsps+website@gmail.com">
-        Contact
-      </Button>
       <Link href="/portfolio" passHref>
         <Button as="a">Portfolio</Button>
       </Link>
@@ -22,6 +19,9 @@ export const SideNav = () => {
       <Link href="/notes" passHref>
         <Button as="a">Notes</Button>
       </Link>
+      <Button as="a" href="mailto:antoniojmsps+website@gmail.com">
+        Contact
+      </Button>
       <Button as="a" href="https://github.com/antoniojps" target="_blank" rel="noreferrer">
         <GithubLogo />
       </Button>

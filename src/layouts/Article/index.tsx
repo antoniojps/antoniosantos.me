@@ -22,9 +22,9 @@ const components = {
   Aside: AsideNote,
   img: ImageArticle,
   h2: HeaderLink,
-  h3: HeaderLink,
-  h4: HeaderLink,
-  h5: HeaderLink,
+  h3: (props: { children: string }) => <HeaderLink as="h3" {...props} />,
+  h4: (props: { children: string }) => <HeaderLink as="h4" {...props} />,
+  h5: (props: { children: string }) => <HeaderLink as="h5" {...props} />,
   a: Link,
 };
 

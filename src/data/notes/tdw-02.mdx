@@ -9,8 +9,8 @@ category: exercise
 
 ### 1.1 Installing an IDE
 
-- [PHPStorm / WebStorm](https://www.jetbrains.com/phpstorm/) — you can create a student account with your UA email address through [JetBrains for Education](https://www.jetbrains.com/community/education/#students).
 - [Visual Studio Code](https://code.visualstudio.com/)
+- [PHPStorm / WebStorm](https://www.jetbrains.com/phpstorm/) — you can create a student account with your UA email address through [JetBrains for Education](https://www.jetbrains.com/community/education/#students).
 
 ### 1.2 Install Git
 
@@ -33,8 +33,8 @@ category: exercise
 
 1. If you don't already have one, create a [GitHub account](https://github.com).
 2. Create a repository in the organisation with a name for the TDW practical classes project.
-3. Create a folder for your project locally on your computer.
-4. Clone the repository to that folder.
+3. Create a folder on your computer where you keep your class projects.
+4. Clone the repository into that folder — the clone creates a subfolder named after the repository, so you don't need to create it yourself.
 
 <Aside>
 
@@ -63,7 +63,13 @@ Create a new Next.js project with the following command (you may need to install
 npx create-next-app@latest
 ```
 
-When asked for the project name, write `tdw-your-name`. For now let's keep it simple and not install any additional extensions (e.g. ESLint or Tailwind).
+When asked for the project name, write `tdw-your-name`. For now let's keep it simple and answer **No** to any additional extensions (e.g. ESLint or Tailwind) — Part 6 starts from a project without a linter.
+
+<Aside>
+
+Running this inside your cloned repository will create a nested folder. If you'd rather have the app at the root of the repository, run `npx create-next-app@latest .` from inside it.
+
+</Aside>
 
 Navigate to the folder and check its contents:
 
@@ -107,7 +113,7 @@ Create a local git feature branch to develop a new page for the application. You
 3. Switch to the selected branch.
 4. Create a commit on the same branch with your changes, including a message describing what you did.
 5. [Push your branch](https://www.atlassian.com/git/tutorials/syncing/git-push) to the remote repository — the new one will need to be created in the remote repository.
-6. From that branch, create a merge request with your changes.
+6. From that branch, open a pull request with your changes — GitHub's name for what GitLab calls a merge request.
 7. Merge these changes.
 8. Delete the temporary branch, if it is a feature you will no longer be working on.
 

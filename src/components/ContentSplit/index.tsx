@@ -9,6 +9,7 @@ export const ContentSplit = () => {
     <Aside>
       <A>
         <Image
+          unoptimized
           src={ImgSurfFish}
           alt="Surfer in a wave, blue, white board"
           quality={100}
@@ -17,6 +18,7 @@ export const ContentSplit = () => {
       </A>
       <B>
         <Image
+          unoptimized
           src={ImgSwell}
           alt="Dog, tongue out. Jack Russel. Laying in grass with tenis ball."
           quality={100}

@@ -13,6 +13,7 @@ export const ContentGrid = () => {
         <Link href="/portfolio#tubelab-(previously-ytrank)" passHref>
           <a>
             <Image
+              unoptimized
               src={ImgCardYtrank}
               alt="Youtube Rank Checker Website Mockup"
               layout="responsive"
@@ -26,6 +27,7 @@ export const ContentGrid = () => {
         <Link href="/portfolio#tvg" passHref>
           <a>
             <Image
+              unoptimized
               src={ImgCardTvg}
               alt="Mobile phone with horse racing app"
               layout="responsive"
@@ -39,6 +41,7 @@ export const ContentGrid = () => {
         <Link href="/portfolio#editor-custom-cms-for-the-university-of-aveiro" passHref>
           <a>
             <Image
+              unoptimized
               src={ImgCardUa}
               alt="Two pages of the UA CMS"
               layout="responsive"

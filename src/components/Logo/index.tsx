@@ -10,7 +10,7 @@ export const Logo = (props: SpaceProps) => {
     <Link href="/" passHref>
       <LogoWrapper {...props}>
         <AvatarContainer>
-          <Image src="/antonio-santos.png" alt="me" width="30" height="30" />
+          <Image unoptimized src="/antonio-santos.png" alt="me" width="30" height="30" />
         </AvatarContainer>
         <AntonioSantosLogo />
       </LogoWrapper>

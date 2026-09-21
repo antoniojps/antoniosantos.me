@@ -12,3 +12,4 @@ export * from "./ButtonListItem";
 export * from "./Experience";
 export * from "./ImageArticle";
 export * from "./AsideNote";
+export * from "./CodeBlock";

@@ -8,6 +8,8 @@ import {
   Experience,
   ImageArticle,
   AsideNote,
+  AsideCallout,
+  CodeBlock,
 } from "../../components";
 import { ArticleLayoutProps } from "./types";
 import { MDXRemote } from "next-mdx-remote";
@@ -19,12 +21,13 @@ import { Information } from "./styles";
 const components = {
   Head,
   Experience,
-  Aside: AsideNote,
+  Aside: AsideCallout,
   img: ImageArticle,
   h2: HeaderLink,
   h3: (props: { children: string }) => <HeaderLink as="h3" {...props} />,
   h4: (props: { children: string }) => <HeaderLink as="h4" {...props} />,
   h5: (props: { children: string }) => <HeaderLink as="h5" {...props} />,
+  pre: CodeBlock,
   a: Link,
 };
 
